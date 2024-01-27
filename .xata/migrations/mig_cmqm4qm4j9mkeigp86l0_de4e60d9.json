@@ -1,0 +1,17 @@
+{
+  "id": "mig_cmqm4qm4j9mkeigp86l0",
+  "parentID": "mig_cmqm4m64j9mkeigp86k0",
+  "checksum": "1:de4e60d984004fbd026bfcaa915daaf7f9eba3d6e646eabb78a2bc75b4719978",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "attendance",
+          "type": "string",
+          "defaultValue": "PENDING"
+        },
+        "table": "Users"
+      }
+    }
+  ]
+}
