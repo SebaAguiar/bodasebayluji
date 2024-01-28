@@ -5,6 +5,7 @@
 import { publicProcedure } from '@/server/trpc';
 import { xata } from '@/xata';
 import { UsersTable } from '@/utils/tables'
+import { z } from 'zod';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -27,4 +28,14 @@ import { UsersTable } from '@/utils/tables'
 export const getUsers = publicProcedure
   .query(async() => {
     return await xata.db[UsersTable].select([]).getAll()
+  })
+
+export const getUser = publicProcedure
+  .input(z.object({
+    name: z.string()
+  }))
+  .query(async({input}) => {
+    const { name } = input
+    const result = await xata.db[UsersTable].select([]).filter({name: name}).getMany()
+    return result
   })

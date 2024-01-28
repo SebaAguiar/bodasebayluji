@@ -1,118 +1,92 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import LandingLayout from '@/layouts/LandingLayout';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <LandingLayout>
+      <header className='w-full h-60 bg-color-1 flex justify-center items-center'>
+        <h1 className='text-3xl'>SEBA Y LUJI</h1>
+      </header>
+      <section className='w-full flex flex-col justify-center items-center'>
+        <div className='w-2/3 h-60 flex flex-col justify-center items-center'>
+          <h3>¡Nos casamos!</h3>
+          <h2>16 MARZO 2024</h2>
+          <h3 className='text-center'>Concepción del Uruguay, Entre Rios</h3>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div className='w-full flex flex-col justify-center items-center text-center'>
+          <h2 className='text-color-2 text-3xl'>¡Bienvenid@s a nuestra boda!</h2>
+          <div className='text-lg m-2'>
+            <p>Nos casamos y estamos súper felices!</p>
+            <p>Es tanta la alegría que queremos compartir con vos todo nuestro amor. Por eso estamos preparando un momento hermoso para que lo disfrutes junto a nosotros.</p>
+            <p>Mientras llega el gran día creamos esta web con varias secciones para que estés al día de todo y para compartir nuestra historia de amor.</p>
+            <p><strong>¡Una cosa importante!</strong> en la sección <strong>asistencia</strong> podés confirmar si vas al casamiento o no. Porfa, confirmanos lo antes posible, así organizarlo nos será mucho más fácil.</p>
+          </div>
+        </div>
+      </section>
+      <section className='w-full flex flex-col justify-center items-center'>
+        <div className='w-4/5 h-60 flex flex-col justify-between items-center text-center'>
+          <div>
+            <div className='h-20'></div>
+            <h1 className='text-color-2 text-3xl'>¡IMPORTANTE!</h1>
+            <p className='text-lg mt-2'>Te dejamos algunos datos fundamentales para el gran día:</p>
+          </div>
+          <div className='bg-color-3 w-2/3 h-[1px]'></div>
+        </div>
+        { /**
+         * 
+         *  TODO: COMPONENTIZAR "VESTIMENTA", "BEBIDA A LA CANASTA", "REGALO" Y "FECHA Y HORA"
+         * 
+         */}
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>VESTIMENTA</h2>
+          <div className='text-lg m-2'>
+            <p>Sé libre de ponerte <strong>¡LO QUE QUIERAS!</strong> No hay un código de vestimenta estricto para nuestra boda.</p>
+            <p>Si te gusta un atuendo formal, vamos a estar felices de verte elegante, pero si estás más cómodo con algo estilo elegante-sport, ¡estaremos igualmente felices de verte!</p>
+            <p><strong>Lo más importante es compartir este momento juntos. ¡Esperamos verte el día de la boda con tu estilo único!</strong></p>
+          </div>
+          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+        </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>BEBIDA A LA CANASTA</h2>
+          <div className='text-lg m-2'>
+            <p>Te pedimos que <strong>traigas tu propia bebida</strong> (podés llevar conservadora; igualmente nosotros te vamos a ofrecer hielo)</p>
+          </div>
+          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+        </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>FECHA Y HORA</h2>
+          <div className='text-lg m-2'>
+            <p>No queremos que te pierdas nuestro gran día, así que te recordamos estos datos importantísimos:</p>
+            <ul>
+              <li>Fecha: 16 de marzo</li>
+              <li>Hora: 18:00hs <strong>puntual</strong></li>
+              <li>Lugar: Capilla Nuestra Señora de Luján, Talita</li>
+            </ul>
+          </div>
+          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+        </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>REGALO</h2>
+          <div className='text-lg m-2'>
+            <p><strong>¡Nuestro mejor regalo es tu presencia!</strong></p>
+            <p>Pero si querés colaborar con nuestra luna de miel, podés hacerlo:</p>
+            <p><strong>ALIAS:</strong> te amo momom</p>
+            <p>O el día de la boda en la urna que estará presente.</p>
+          </div>
+        </div>
+      </section>
+      <footer className='w-full h-60 bg-color-1 flex flex-col justify-center items-center mt-8'>
+        <h5 className='text-2xl m-8'>S Y L</h5>
+        <div className='w-5/6 flex flex-row items-center justify-around'>
+          <Link href='/confirm'>Confirmar</Link>
+          <Link href='/contact'>Contactanos</Link>
+          <Link href='/contact'>Ubicación</Link>
+        </div>
+      </footer>
+    </LandingLayout>
   );
 }
