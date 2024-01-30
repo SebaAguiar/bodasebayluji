@@ -28,7 +28,7 @@ export type TypeGender = 'MALE' | 'FEMALE'
 export type TypeAge = 'BABY' | 'CHILD' | 'ADULT'
 
 export type TypeUser = {
-  id?: string
+  id: string
   name?: string;
   attendance?: TypeAttendance;
   email?: string

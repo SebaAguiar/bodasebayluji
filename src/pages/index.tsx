@@ -2,14 +2,17 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import LandingLayout from '@/layouts/LandingLayout';
 import Link from 'next/link';
+import styles from '@/styles/landingStyles.module.css'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <LandingLayout>
-      <header className='w-full h-60 bg-color-1 flex justify-center items-center'>
-        <h1 className='text-3xl'>SEBA Y LUJI</h1>
+      <header id={styles.landingHeader} className='w-full h-60 flex justify-center items-center bg-no-repeat'>
+        {/* <Image src={headerImage} alt="alt" width={0} height={0} className='' /> */}
+        {/* <h1 className='text-3xl'>SEBA Y LUJI</h1> */}
       </header>
       <section className='w-full flex flex-col justify-center items-center'>
         <div className='w-2/3 h-60 flex flex-col justify-center items-center'>

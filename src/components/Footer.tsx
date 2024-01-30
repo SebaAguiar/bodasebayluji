@@ -2,15 +2,13 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import Footer from '@/components/Footer';
+import Link from 'next/link';
 import React from 'react'
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-type LandingLayoutProps = {
-  children: React.ReactNode
-}
+
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -21,21 +19,24 @@ type LandingLayoutProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
-  return (
-    <>
-      <main className='w-screen h-screen flex flex-col justify-center items-center overflow-auto bg-background'>
-        {
-          children
-        }
-      </main>
-    </>
-    
-  )
-}
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default LandingLayout
+const Footer = () => {
+  return (
+    <>
+      <nav className='w-full h-60 bg-color-1 flex flex-col justify-center items-center mt-8 fixed bottom-0'>
+        <h5 className='text-2xl m-8'>S Y L</h5>
+        <div className='w-5/6 flex flex-row items-center justify-around'>
+          <Link href='/confirm'>Confirmar</Link>
+          <Link href='/contact'>Contactanos</Link>
+          <Link href='/contact'>Ubicación</Link>
+        </div>
+      </nav>
+    </>
+  )
+}
+
+export default Footer

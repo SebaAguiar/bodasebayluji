@@ -35,7 +35,10 @@ export const getUser = publicProcedure
     name: z.string()
   }))
   .query(async({input}) => {
-    const { name } = input
-    const result = await xata.db[UsersTable].select([]).filter({name: name}).getMany()
-    return result
+    try {
+      const { name } = input
+      return await xata.db[UsersTable].select([]).filter({name: name}).getMany()
+    } catch (error) {
+      console.log(error)
+    }
   })

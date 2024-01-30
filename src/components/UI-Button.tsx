@@ -2,14 +2,18 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import Footer from '@/components/Footer';
 import React from 'react'
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-type LandingLayoutProps = {
-  children: React.ReactNode
+
+type TypeMyButtonProps = {
+  buttonText: string
+  tailwindStyle?: string
+  cssStyle?: object
+  type?: 'submit' | 'button'
+  handleClick: () => void
 }
 
 /****************************************************************************************************************************************************
@@ -21,16 +25,11 @@ type LandingLayoutProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
+const UIButton: React.FC<TypeMyButtonProps> = ({ buttonText, type, tailwindStyle, cssStyle, handleClick }) => {
   return (
     <>
-      <main className='w-screen h-screen flex flex-col justify-center items-center overflow-auto bg-background'>
-        {
-          children
-        }
-      </main>
+     <button className={tailwindStyle ?? ''} type={type ?? 'button'} onClick={handleClick}>{buttonText}</button> 
     </>
-    
   )
 }
 
@@ -38,4 +37,4 @@ const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default LandingLayout
+export default UIButton
