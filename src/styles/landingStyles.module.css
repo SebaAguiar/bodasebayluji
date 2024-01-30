@@ -1,3 +1,13 @@
 #landingHeader {
   background-image: url('/portada-web-comprimida.png');
 }
+
+#websiteDecoration {
+  background-image: url(https://cdn1.casamientos.com.ar/assets/img/wedsites/hero/olive-branches-bg-small.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+#landingFooter {
+  background-image: url(https://cdn0.casamientos.com.ar/website/fotos/1/9/6/5/bg_t30_345691_c205113_footer.jpg?v=1706073392);
+}

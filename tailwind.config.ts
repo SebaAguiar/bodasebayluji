@@ -17,14 +17,24 @@ const config: Config = {
       'orange': 'FCB700'
     },
     extend: {
+      height:{
+        "128": '32rem',
+        "152": '38rem'
+      },
       backgroundImage: {
         "header-landing": "url('/images/portada-web-comprimida.png')",
+        "website-decoration": "url(https://cdn1.casamientos.com.ar/assets/img/wedsites/hero/olive-branches-bg-small.jpg)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        "sans": ['ProximaNova', 'Helvetica', 'Arial', 'sans-serif']
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
 export default config;

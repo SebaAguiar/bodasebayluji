@@ -32,7 +32,7 @@ type TypeFooterProps = {
 const UIFooter: React.FC<TypeFooterProps> = ({ title, image, links }) => {
   return (
     <>
-      <footer className='w-full h-60 bg-color-1 flex flex-col justify-center items-center mt-8'>
+      <footer className='w-full h-60 flex flex-col justify-center items-center'>
         <h5 className='text-2xl m-8'>{title}</h5>
         <div className='w-5/6 flex flex-row items-center justify-around'>
           {
