@@ -2,11 +2,20 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
+import React from 'react'
+import JsxParser from 'react-jsx-parser'
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
+type TypeNotice = {
+  title: string
+  paragraph: string
+}
 
+type TypeUiNoticesProps = {
+  notices: TypeNotice[]
+}
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -17,10 +26,24 @@
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
+const UINotices: React.FC<TypeUiNoticesProps> = ({ notices }) => {
+  return (
+    notices.map((notice, index) => (
+      <div key={index} className='flex flex-col justify-center items-center text-center mt-8'>
+        <h2 className='text-color-2 text-2xl'>{notice.title}</h2>
+        <div className='text-lg m-2'>
+          {
+            <JsxParser jsx={notice.paragraph} />
+          }
+        </div>
+        <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+      </div>
+    ))
+  )
+}
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export const UsersTable = 'Users'
-export const TablesTable = 'Tables'
-export const TableEmails = 'Emails'
+
+export default UINotices

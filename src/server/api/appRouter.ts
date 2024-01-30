@@ -3,6 +3,7 @@
  ****************************************************************************************************************************************************/
 
 import { createTRPCRouter } from '../trpc';
+import { contactRouter } from './routers/contact';
 import { userRouter } from './routers/users';
 
 
@@ -27,7 +28,8 @@ import { userRouter } from './routers/users';
  * * EXPORTS
  ****************************************************************************************************************************************************/
 export const appRouter = createTRPCRouter({
-  user: userRouter
+  user: userRouter,
+  contact: contactRouter
 })
 
 export type AppRouter = typeof appRouter

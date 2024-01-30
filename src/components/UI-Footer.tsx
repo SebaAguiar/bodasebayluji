@@ -9,6 +9,16 @@ import React from 'react'
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
+type TypeFooterLink = {
+  href: string
+  text: string
+}
+
+type TypeFooterProps = {
+  links: TypeFooterLink[]
+  title?: string
+  image?: string
+}
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -19,24 +29,25 @@ import React from 'react'
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
+const UIFooter: React.FC<TypeFooterProps> = ({ title, image, links }) => {
+  return (
+    <>
+      <footer className='w-full h-60 bg-color-1 flex flex-col justify-center items-center mt-8'>
+        <h5 className='text-2xl m-8'>{title}</h5>
+        <div className='w-5/6 flex flex-row items-center justify-around'>
+          {
+            links.map((link, index) => (
+              <Link key={index} href={link.href}>{link.text}</Link>
+            ))
+          }
+        </div>
+      </footer>
+    </>
+  )
+}
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-const Footer = () => {
-  return (
-    <>
-      <nav className='w-full h-60 bg-color-1 flex flex-col justify-center items-center mt-8 fixed bottom-0'>
-        <h5 className='text-2xl m-8'>S Y L</h5>
-        <div className='w-5/6 flex flex-row items-center justify-around'>
-          <Link href='/confirm'>Confirmar</Link>
-          <Link href='/contact'>Contactanos</Link>
-          <Link href='/contact'>Ubicación</Link>
-        </div>
-      </nav>
-    </>
-  )
-}
-
-export default Footer
+export default UIFooter

@@ -2,7 +2,6 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import Footer from '@/components/Footer';
 import React from 'react'
 
 /****************************************************************************************************************************************************
@@ -21,7 +20,7 @@ type LandingLayoutProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
+const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
     <>
       <main className='w-screen h-screen flex flex-col justify-center items-center overflow-auto bg-background'>
@@ -38,4 +37,4 @@ const LandingLayout: React.FC<LandingLayoutProps> = ({ children }) => {
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default LandingLayout
+export default PageLayout

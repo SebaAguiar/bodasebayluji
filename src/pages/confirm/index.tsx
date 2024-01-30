@@ -3,7 +3,7 @@
  ****************************************************************************************************************************************************/
 
 import UIButton from '@/components/UI-Button';
-import LandingLayout from '@/layouts/LandingLayout';
+import PageLayout from '@/layouts/PageLayout';
 import { trpc } from '@/utils/trpc';
 import { TypeUser } from '@/utils/types';
 import React, { useState } from 'react'
@@ -61,7 +61,7 @@ const ConfirmPage = () => {
   }
 
   return (
-    <LandingLayout>
+    <PageLayout>
       <h1 className='text-color-2 text-3xl text-center mb-8'>Buscate poniendo tu nombre</h1>
       {
         user && user.map((u, index) => (
@@ -82,7 +82,7 @@ const ConfirmPage = () => {
         <input className='border rounded-md' name='name' onChange={handleInputChange} value={name} />
         <UIButton buttonText='Buscar' handleClick={handleSearchButton} tailwindStyle='border rounded-md ml-4' />
       </div>
-    </LandingLayout>
+    </PageLayout>
   )
 }
 

@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import ReduxProvider from '@/redux/provider';
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";

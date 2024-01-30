@@ -25,6 +25,15 @@ const tables = [
     columns: [{ name: "number", type: "int" }],
     revLinks: [{ column: "user_table", table: "Users" }],
   },
+  {
+    name: "Emails",
+    columns: [
+      { name: "email", type: "email" },
+      { name: "fullName", type: "string" },
+      { name: "subject", type: "string" },
+      { name: "message", type: "text" },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -36,9 +45,13 @@ export type UsersRecord = Users & XataRecord;
 export type Tables = InferredTypes["Tables"];
 export type TablesRecord = Tables & XataRecord;
 
+export type Emails = InferredTypes["Emails"];
+export type EmailsRecord = Emails & XataRecord;
+
 export type DatabaseSchema = {
   Users: UsersRecord;
   Tables: TablesRecord;
+  Emails: EmailsRecord
 };
 
 const DatabaseClient = buildClient();
