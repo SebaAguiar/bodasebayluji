@@ -53,7 +53,7 @@ const ConfirmPage = () => {
 
   const handleSearchButton = async() => {
     const fetchedUser = await trpc.user.getUser.query({ name: name })
-    setUser(fetchedUser)
+    setUser(fetchedUser ?? [])
   }
 
   const handleConfirmButton = async() => {

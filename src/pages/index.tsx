@@ -8,7 +8,6 @@ import PageLayout from '@/layouts/PageLayout';
 import Link from 'next/link';
 import styles from '@/styles/landingStyles.module.css'
 import UIFooter from '@/components/UI-Footer';
-import UINotices from '@/components/UI-Notices';
 import { notices } from '@/other/notices';
 
 /****************************************************************************************************************************************************
@@ -77,7 +76,42 @@ export default function Home() {
           </div>
           <div className='bg-color-3 w-2/3 h-[1px]'></div>
         </div>
-        <UINotices notices={notices} />
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>VESTIMENTA</h2>
+          <div className='text-lg m-2'>
+            <p>Sé libre de ponerte <strong>¡LO QUE QUIERAS!</strong> No hay un código de vestimenta estricto para nuestra boda.</p> 
+            <p>Si te gusta un atuendo formal, vamos a estar felices de verte elegante, pero si estás más cómodo con algo estilo elegante-sport, ¡estaremos igualmente felices de verte!</p> 
+            <p><strong>Lo más importante es compartir este momento juntos. ¡Esperamos verte el día de la boda con tu estilo único!</strong></p>
+          </div>
+        <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+      </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>BEBIDA A LA CANASTA</h2>
+          <div className='text-lg m-2'>
+            <p>Te pedimos que <strong>traigas tu propia bebida</strong> (podés llevar conservadora; igualmente nosotros te vamos a ofrecer hielo)</p>
+          </div>
+        <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+      </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>FECHA Y HORA</h2>
+          <div className='text-lg m-2'>
+            <p>No queremos que te pierdas nuestro gran día, así que te recordamos estos datos importantísimos:</p> 
+            <ul>
+              <li>Fecha: 16 de marzo</li> 
+              <li>Hora: 18:00hs <strong>puntual</strong></li> 
+              <li>Lugar: Capilla Nuestra Señora de Luján, Talita</li>
+            </ul>
+          </div>
+        <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+      </div>
+        <div className='flex flex-col justify-center items-center text-center mt-8'>
+          <h2 className='text-color-2 text-2xl'>REGALO</h2>
+          <div className='text-lg m-2'>
+            <p><strong>¡El mejor regalo que podés darnos es tu presencia!</strong></p> 
+            <p>Pero si querés colaborar con nuestra luna de miel, podés hacerlo:</p> <p><strong>ALIAS:</strong>alias</p>
+            <p>O el día de la boda en la urna que estará presente.</p>
+          </div>
+      </div>
       </section>
       <UIFooter title='S&L' links={footerLinks} />
     </PageLayout>
