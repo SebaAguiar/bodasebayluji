@@ -52,25 +52,25 @@ export default function Home() {
         {/* <h1 className='text-3xl'>SEBA Y LUJI</h1> */}
       </header>
       <section className='w-full flex flex-col justify-center items-center'>
-        <div className="w-1/3 h-32 mt-10 mb-8">
+        <div className="w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24">
         <div id={styles.websiteDecoration} className="w-full h-full"></div>
         </div>
-        <div className='w-2/3 h-60 flex flex-col justify-center items-center'>
-          <h3 className='text-2xl font-thin mb-10'>¡Nos casamos!</h3>
-          <h1 className='text-6xl font-thin'>16 MARZO 2024</h1>
-          <h3 className='text-2xl font-thin mt-10'>Concepción del Uruguay, Entre Rios</h3>
+        <div className='w-2/3 h-60 flex flex-col justify-center items-center mt-16 mb-16'>
+          <h3 className='text-3xl customFont mb-20'>¡Nos casamos!</h3>
+          <h1 className='text-6xl customFont font-bold'>16 MARZO 2024</h1>
+          <h3 className='text-3xl customFont mt-20'>Concepción del Uruguay, Entre Rios</h3>
         </div>
-        <div className="w-1/3 h-32 mt-10 mb-8">
-        <div id={styles.websiteDecoration} className="w-full h-full transform scale-y-[-1]"></div>
+        <div className="w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24">
+        <div id={styles.websiteDecoration} className="w-full h-full transform scale-y-[-1] scale-x-[-1]"></div>
         </div>
         
         <div className='w-full flex flex-col justify-center items-center text-center'>
-          <h2 className='text-color-2 text-3xl'>¡Bienvenid@s a nuestra boda!</h2>
-          <div className='text-lg m-2'>
-            <p>Nos casamos y estamos súper felices!</p>
-            <p>Es tanta la alegría que queremos compartir con vos todo nuestro amor. Por eso estamos preparando un momento hermoso para que lo disfrutes junto a nosotros.</p>
-            <p>Mientras llega el gran día creamos esta web con varias secciones para que estés al día de todo y para compartir nuestra historia de amor.</p>
-            <p><strong>¡Una cosa importante!</strong> en la sección <strong>asistencia</strong> podés confirmar si vas al casamiento o no. Porfa, confirmanos lo antes posible, así organizarlo nos será mucho más fácil.</p>
+          <h2 className='text-color-2 text-3xl mt-24 mb-8'>¡Bienvenid@s a nuestra boda!</h2>
+          <div className='text-lg mx-36 px-48'>
+            <p className="my-5">¡Nos casamos y estamos súper felices!</p>
+            <p className="my-5">Es tanta la alegría que queremos compartir con vos todo nuestro amor. Por eso estamos preparando un momento hermoso para que lo disfrutes junto a nosotros.</p>
+            <p className="my-5">Mientras llega el gran día creamos esta web con varias secciones para que estés al día de todo y para compartir nuestra historia de amor.</p>
+            <p className="my-5"><strong>¡Importante!</strong> En la sección <strong>asistencia</strong> podés confirmar si vas al casamiento o no. Porfa, confirmanos lo antes posible, así organizarlo nos será mucho más fácil.</p>
           </div>
         </div>
       </section>

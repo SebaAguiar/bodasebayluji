@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       'background': '#FDFDFD',
+      'background2': '#fff4ea',
       'color-1': '#DAA0DF',
       'color-2': '#E0A89B',
       'color-3': '#DEB2B1',
@@ -18,6 +19,7 @@ const config: Config = {
     },
     extend: {
       height:{
+        "30": '7.5rem',
         "128": '32rem',
         "152": '38rem'
       },

@@ -3,13 +3,36 @@
  ****************************************************************************************************************************************************/
 
 import React from 'react'
-
+import NavBar from '../components/UI-NavBar'
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 type LandingLayoutProps = {
   children: React.ReactNode
 }
+
+const navBarLinks = [
+  {
+    href: '/index',
+    text: '¡BIENVENIDOS!'
+  },
+  {
+    href: '/important',
+    text: '¡IMPORTANTE!'
+  },
+  {
+    href: '/confirm',
+    text: 'CONFIRMÁ TU ASISTENCIA'
+  },
+  {
+    href: '/contact',
+    text: 'CONTACTANOS'
+  },
+  {
+    href: '/ubication',
+    text: 'UBICACIÓN'
+  }
+]
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -23,11 +46,14 @@ type LandingLayoutProps = {
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
     <>
-      <main className='w-screen h-screen flex flex-col justify-center items-center overflow-auto bg-background'>
+    <body className="w-screen h-screen absolute">
+      <NavBar title='S&L' links={navBarLinks}/>
+      <main className='w-screen h-screen flex flex-col justify-center items-center bg-background'>
         {
           children
         }
       </main>
+    </body>
     </>
     
   )
