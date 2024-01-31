@@ -7,6 +7,7 @@ import PageLayout from '@/layouts/PageLayout';
 import { trpc } from '@/utils/trpc';
 import { TypeUser } from '@/utils/types';
 import React, { useState } from 'react'
+import styles from '@/styles/landingStyles.module.css'
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -62,6 +63,9 @@ const ConfirmPage = () => {
 
   return (
     <PageLayout>
+      <div className="w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24">
+        <div id={styles.websiteDecoration} className="w-full h-full"></div>
+        </div>
       <h1 className='text-color-2 text-3xl text-center mb-8'>Buscate poniendo tu nombre</h1>
       {
         user && user.map((u, index) => (
@@ -82,6 +86,9 @@ const ConfirmPage = () => {
         <input className='border rounded-md' name='name' onChange={handleInputChange} value={name} />
         <UIButton buttonText='Buscar' handleClick={handleSearchButton} tailwindStyle='border rounded-md ml-4' />
       </div>
+      <div className="w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24">
+        <div id={styles.websiteDecoration} className="w-full h-full transform scale-y-[-1] scale-x-[-1]"></div>
+        </div>
     </PageLayout>
   )
 }

@@ -4,6 +4,8 @@
 
 import React from 'react'
 import NavBar from '../components/UI-NavBar'
+import UIFooter from '@/components/UI-Footer';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
@@ -46,14 +48,15 @@ const navBarLinks = [
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
     <>
-    <body className="w-screen h-screen absolute">
+    <div className="w-screen h-screen absolute">
       <NavBar title='S&L' links={navBarLinks}/>
       <main className='w-screen h-screen flex flex-col justify-center items-center bg-background'>
         {
           children
         }
       </main>
-    </body>
+      <UIFooter/>
+    </div>
     </>
     
   )

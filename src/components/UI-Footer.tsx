@@ -15,7 +15,7 @@ type TypeFooterLink = {
 }
 
 type TypeFooterProps = {
-  links: TypeFooterLink[]
+  links?: TypeFooterLink[]
   title?: string
   image?: string
 }
@@ -29,18 +29,11 @@ type TypeFooterProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const UIFooter: React.FC<TypeFooterProps> = ({ title, image, links }) => {
+const UIFooter: React.FC<TypeFooterProps> = () => {
   return (
     <>
-      <footer className='w-full h-60 flex flex-col justify-center items-center'>
-        <h5 className='text-2xl m-8'>{title}</h5>
-        <div className='w-5/6 flex flex-row items-center justify-around'>
-          {
-            links.map((link, index) => (
-              <Link key={index} href={link.href}>{link.text}</Link>
-            ))
-          }
-        </div>
+      <footer className='w-full h-30 flex flex-col justify-center items-center bg-background2 '>
+        <h5 className='text-2xl m-8'>Seba & Luji</h5>
       </footer>
     </>
   )

@@ -32,9 +32,9 @@ type TypeNavBarProps = {
 const UIFooter: React.FC<TypeNavBarProps> = ({ title, image, links }) => {
   return (
 
-      <nav className='w-full h-30 flex flex-col justify-center items-center bg-background2 relative z-10'>
-        <h5 className='text-3xl mb-8'>{title}</h5>
-        <div className='w-5/6 flex items-center justify-center'>
+      <nav className='w-full h-30 flex flex-col justify-center items-center bg-background2 relative z-10 sticky top-0'>
+        <h5 className='text-3xl mb-8 relative top-0'>{title}</h5>
+        <div className='w-5/6 flex items-center justify-center sticky top-0'>
           {
             links.map((link, index) => (
                 <div key={index} className="mx-4">
