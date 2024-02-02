@@ -1,0 +1,16 @@
+{
+  "id": "mig_cms7a7i4ur5vbqrr2gog",
+  "parentID": "mig_cms7a3cuudi1pa81u37g",
+  "checksum": "1:f5a58a7b643b73cc0f78228038b61eb8fdd20dbc6c266d542fc062fc54c14c13",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "fullname",
+          "type": "string"
+        },
+        "table": "Emails"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cms7aaa4ur5vbqrr2gpg",
+  "parentID": "mig_cms7a7i4ur5vbqrr2gog",
+  "checksum": "1:1302f9d7157fc72e5000a94f3b2c7482a898fc2ca604c9b8a070796002f5f0de",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "subject",
+          "type": "string"
+        },
+        "table": "Emails"
+      }
+    }
+  ]
+}

@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('/public/fonts/Palmaton.ttf'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Palmaton';
+  src: url('../../public//fonts/Palmaton.ttf') format('truetype');
+}
 
 .customFont {
-    font-family: 'Parisienne', cursive
-  }
+  font-family: 'Parisienne', cursive;
+}
+
+.palmatonFont {
+  font-family: 'Palmaton';
+}
+
+.montserratFont {
+  font-family: 'Montserrat';
+}

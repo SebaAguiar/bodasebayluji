@@ -6,20 +6,20 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'res.cloudinary.com',
         port: '',
-        pathname: '/dvuqyaegw/**'
-      }
-    ]
+        pathname: '/dvuqyaegw/**',
+      },
+    ],
   },
   webpack: (config, { isServer }) => {
-    if(!isServer) {
+    if (!isServer) {
       config.module.rules.push({
         test: /\.pdf$/,
         use: 'file-loader?name=[path][name].[ext]',
-      })
+      });
     }
-    return config
+    return config;
   },
   reactStrictMode: true,
-}
+};
 
-export default nextConfig
+export default nextConfig;

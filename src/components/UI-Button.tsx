@@ -2,39 +2,53 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import React from 'react'
+import React from 'react';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
 type TypeMyButtonProps = {
-  buttonText: string
-  tailwindStyle?: string
-  cssStyle?: object
-  type?: 'submit' | 'button'
-  handleClick: () => void
-}
+  buttonText: string;
+  tailwindStyle?: string;
+  cssStyle?: object;
+  type?: 'submit' | 'button';
+  handleClick: () => void;
+};
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
 
-
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const UIButton: React.FC<TypeMyButtonProps> = ({ buttonText, type, tailwindStyle, cssStyle, handleClick }) => {
+const UIButton: React.FC<TypeMyButtonProps> = ({
+  buttonText,
+  type,
+  tailwindStyle,
+  cssStyle,
+  handleClick,
+}) => {
   return (
     <>
-     <button className={tailwindStyle ?? ''} type={type ?? 'button'} onClick={handleClick}>{buttonText}</button> 
+      <button
+        className={
+          tailwindStyle ??
+          'h-10 w-32 rounded-full montserratFont bg-dark-black border-2 border-dark-white font-semibold text-dark-white mt-4 ml-6 duration-300'
+        }
+        type={type ?? 'button'}
+        onClick={handleClick}
+      >
+        {buttonText}
+      </button>
     </>
-  )
-}
+  );
+};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default UIButton
+export default UIButton;

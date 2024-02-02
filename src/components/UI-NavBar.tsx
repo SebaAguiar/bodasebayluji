@@ -3,53 +3,52 @@
  ****************************************************************************************************************************************************/
 
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
 type TypeNavBarLink = {
-  href: string
-  text: string
-}
+  href: string;
+  text: string;
+};
 
 type TypeNavBarProps = {
-  links: TypeNavBarLink[]
-  title?: string
-  image?: string
-}
+  links: TypeNavBarLink[];
+  title?: string;
+  image?: string;
+};
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
 
-
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const UIFooter: React.FC<TypeNavBarProps> = ({ title, image, links }) => {
+const UINavBar: React.FC<TypeNavBarProps> = ({ title, image, links }) => {
   return (
-
-      <nav className='w-full h-30 flex flex-col justify-center items-center bg-background2 relative z-10 sticky top-0'>
-        <h5 className='text-3xl mb-8 relative top-0'>{title}</h5>
-        <div className='w-5/6 flex items-center justify-center sticky top-0'>
-          {
-            links.map((link, index) => (
-                <div key={index} className="mx-4">
-                    <Link key={index} href={link.href}>{link.text}</Link>
-                </div>
-            ))
-          }
-        </div>
-      </nav>
-
-  )
-}
+    <nav className='w-full h-30 flex flex-col justify-center items-center bg-background2 z-10 sticky top-0'>
+      <h5 className='text-4xl font-medium mb-8 palmatonFont relative top-0'>
+        {title}
+      </h5>
+      <div className='w-5/6 flex items-center justify-center sticky top-0'>
+        {links.map((link, index) => (
+          <div key={index} className='mx-4 montserratFont font-light text-xl'>
+            <Link key={index} href={link.href}>
+              {link.text}
+            </Link>
+          </div>
+        ))}
+      </div>
+    </nav>
+  );
+};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default UIFooter
+export default UINavBar;

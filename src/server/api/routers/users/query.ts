@@ -4,41 +4,41 @@
 
 import { publicProcedure } from '@/server/trpc';
 import { xata } from '@/xata';
-import { UsersTable } from '@/utils/tables'
+import { UsersTable } from '@/utils/tables';
 import { z } from 'zod';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
-
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export const getUsers = publicProcedure
-  .query(async() => {
-    return await xata.db[UsersTable].select([]).getAll()
-  })
+export const getUsers = publicProcedure.query(async () => {
+  return await xata.db[UsersTable].select([]).getAll();
+});
 
 export const getUser = publicProcedure
-  .input(z.object({
-    name: z.string()
-  }))
-  .query(async({input}) => {
+  .input(
+    z.object({
+      name: z.string(),
+    }),
+  )
+  .query(async ({ input }) => {
     try {
-      const { name } = input
-      return await xata.db[UsersTable].select([]).filter({name: name}).getMany()
+      const { name } = input;
+      return await xata.db[UsersTable].select([])
+        .filter({ name: name })
+        .getMany();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  })
+  });

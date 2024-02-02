@@ -1,0 +1,12 @@
+{
+  "id": "mig_cms7a3cuudi1pa81u37g",
+  "parentID": "mig_cmqm67e4j9mkeigp86rg",
+  "checksum": "1:74b0c2e30ff38ef090bf5af9da86bcab85663e800b7a073e9682b208211bde31",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Emails"
+      }
+    }
+  ]
+}

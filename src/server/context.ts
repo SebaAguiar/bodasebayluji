@@ -12,13 +12,12 @@ import { xata } from '@/xata';
  ****************************************************************************************************************************************************/
 
 type CreateContextOptions = {
-  session: Session | null
-}
+  session: Session | null;
+};
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -27,18 +26,18 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
-    xata
-  }
-}
+    xata,
+  };
+};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export const createTRPCContext = async(opts: CreateNextContextOptions) => {
-  const { req, res } = opts
-  const session = await getServerAuthSession({ req, res })
+export const createTRPCContext = async (opts: CreateNextContextOptions) => {
+  const { req, res } = opts;
+  const session = await getServerAuthSession({ req, res });
   return createInnerTRPCContext({
-    session
-  })
-}
+    session,
+  });
+};

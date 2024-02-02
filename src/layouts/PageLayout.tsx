@@ -2,44 +2,43 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import React from 'react'
-import NavBar from '../components/UI-NavBar'
+import React from 'react';
+import NavBar from '../components/UI-NavBar';
 import UIFooter from '@/components/UI-Footer';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 type LandingLayoutProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const navBarLinks = [
   {
-    href: '/index',
-    text: '¡BIENVENIDOS!'
+    href: '/',
+    text: '¡BIENVENIDOS!',
   },
   {
     href: '/important',
-    text: '¡IMPORTANTE!'
+    text: '¡IMPORTANTE!',
   },
   {
     href: '/confirm',
-    text: 'CONFIRMÁ TU ASISTENCIA'
+    text: 'CONFIRMÁ TU ASISTENCIA',
   },
   {
     href: '/contact',
-    text: 'CONTACTANOS'
+    text: 'CONTACTANOS',
   },
   {
     href: '/ubication',
-    text: 'UBICACIÓN'
-  }
-]
+    text: 'UBICACIÓN',
+  },
+];
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -48,22 +47,19 @@ const navBarLinks = [
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
     <>
-    <div className="w-screen h-screen absolute">
-      <NavBar title='S&L' links={navBarLinks}/>
-      <main className='w-screen h-screen flex flex-col justify-center items-center bg-background'>
-        {
-          children
-        }
-      </main>
-      <UIFooter/>
-    </div>
+      <div className='w-screen h-screen absolute'>
+        <NavBar title='S&L' links={navBarLinks} />
+        <main className='w-screen min-h-screen flex flex-col justify-center items-center bg-background'>
+          {children}
+        </main>
+        <UIFooter />
+      </div>
     </>
-    
-  )
-}
+  );
+};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default PageLayout
+export default PageLayout;

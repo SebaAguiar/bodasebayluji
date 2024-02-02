@@ -10,21 +10,19 @@ import { inferRouterInputs, inferRouterOutputs } from '@trpc/server';
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
-
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
 const getBaseUrl = () => {
-  if (typeof window !== 'undefined') return ''
-  if (process.env.VERCEL_URL) return process.env.VERCEL_URL
-  return `http://localhost:${process.env.PORT ?? 3000}`
-}
+  if (typeof window !== 'undefined') return '';
+  if (process.env.VERCEL_URL) return process.env.VERCEL_URL;
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
@@ -33,10 +31,10 @@ const getBaseUrl = () => {
 export const trpc = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: `${getBaseUrl()}/api/trpc`
-    })
+      url: `${getBaseUrl()}/api/trpc`,
+    }),
   ],
-})
+});
 
-export type RouterInputs = inferRouterInputs<AppRouter>
-export type RouterOutputs = inferRouterOutputs<AppRouter>
+export type RouterInputs = inferRouterInputs<AppRouter>;
+export type RouterOutputs = inferRouterOutputs<AppRouter>;
