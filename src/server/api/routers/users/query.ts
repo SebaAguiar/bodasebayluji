@@ -36,7 +36,7 @@ export const getUser = publicProcedure
     try {
       const { name } = input;
       return await xata.db[UsersTable].select([])
-        .filter({ name: name })
+        .filter({ name: { $iContains: name } })
         .getMany();
     } catch (error) {
       console.log(error);

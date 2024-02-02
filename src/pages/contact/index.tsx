@@ -66,7 +66,7 @@ const ContactPage = () => {
           Si tenés cualquier pregunta para nosotros o nos querés comentar algo,
           ¡mandanos un mensajito!
         </p>
-        <div className='bg-color-3 w-1/2 h-[1px] mt-8'></div>
+        <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
       </div>
       <form
         className='w-7/12 text-dark-white montserratFont font-light flex flex-col justify-center items-center'
@@ -121,7 +121,7 @@ const ContactPage = () => {
           <label htmlFor='message'>Mensaje:</label>
         </div>
         <button
-          className='h-10 w-32 rounded-full bg-dark-black border-2 border-dark-white font-semibold text-dark-white mt-4 duration-300'
+          className='h-10 w-32 rounded-md bg-dark-black border-2 border-dark-white font-semibold text-dark-white mt-4 duration-300 hover:bg-grey'
           type='submit'
           onClick={() => alert('Gracias por tu mensaje')}
         >

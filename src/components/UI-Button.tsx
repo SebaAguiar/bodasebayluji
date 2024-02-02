@@ -36,7 +36,7 @@ const UIButton: React.FC<TypeMyButtonProps> = ({
       <button
         className={
           tailwindStyle ??
-          'h-10 w-32 rounded-full montserratFont bg-dark-black border-2 border-dark-white font-semibold text-dark-white mt-4 ml-6 duration-300'
+          'h-10 w-32 rounded-md montserratFont border-2 font-semibold mt-4 ml-6 transition-transform ease-in-out duration-300 hover:bg-grey'
         }
         type={type ?? 'button'}
         onClick={handleClick}

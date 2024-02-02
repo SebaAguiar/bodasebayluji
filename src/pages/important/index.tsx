@@ -40,7 +40,7 @@ const ContactPage = () => {
               para el gran día:
             </p>
           </div>
-          <div className='bg-color-3 w-2/3 h-[1px]'></div>
+          <div className='bg-color-3 w-130 h-[1px] mt-8'></div>
         </div>
         <div className='flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
@@ -66,7 +66,7 @@ const ContactPage = () => {
               </strong>
             </p>
           </div>
-          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
         </div>
         <div className='flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
@@ -82,7 +82,7 @@ const ContactPage = () => {
               hielo)
             </p>
           </div>
-          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-110 h-[1px] mt-8'></div>
         </div>
         <div className='flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
@@ -102,7 +102,7 @@ const ContactPage = () => {
               <li>Lugar: Capilla Nuestra Señora de Luján, Talita</li>
             </ul>
           </div>
-          <div className='bg-color-3 w-4/5 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
         </div>
         <div className='flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>Regalo</h2>

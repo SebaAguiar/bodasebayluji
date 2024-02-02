@@ -21,6 +21,10 @@ type TypeConfirmationStateProps = {
   state: string;
 };
 
+type TypeSelectedState = {
+  [key: string]: 'CONFIRM' | 'DENIED';
+};
+
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
@@ -31,38 +35,26 @@ const verifyAttendance = (attendance: string | undefined) => {
   }
   if (attendance !== 'DENIED' && attendance !== 'CONFIRM') {
     return {
-      attendance: 'Pendiente',
+      attendance: 'No dije nada',
       style: 'text-orange',
     };
   }
   if (attendance === 'DENIED') {
     return {
-      attendance: 'No',
+      attendance: 'Dije "no voy"',
       style: 'text-red',
     };
   }
   if (attendance === 'CONFIRM') {
     return {
-      attendance: 'Si',
+      attendance: 'Dije "voy"',
       style: 'text-green',
     };
   }
 };
 
-const ConfirmationState: React.FC<TypeConfirmationStateProps> = ({ state }) => {
-  if (state !== 'DENIED' && state !== 'CONFIRM') {
-    return <p className='text-orange'>Pendiente</p>;
-  }
-  if (state === 'DENIED') {
-    return <p className='text-red'>No</p>;
-  }
-  if (state === 'CONFIRM') {
-    return <p className='text-green'>Si</p>;
-  }
-};
-
 const ConfirmPage = () => {
-  const [selected, setSelected] = useState('CONFIRM');
+  const [selected, setSelected] = useState<TypeSelectedState>({});
   const [user, setUser] = useState<TypeUser[]>([]);
   const [name, setName] = useState('');
 
@@ -79,12 +71,14 @@ const ConfirmPage = () => {
     setUser(fetchedUser ?? []);
   };
 
-  const handleConfirmButton = async () => {
+  const handleSubmit = async (id: string) => {
     await trpc.user.setConfirmation.mutate({
-      attendance: selected,
-      id: user[0].id ?? '',
+      attendance: selected[id],
+      id,
     });
   };
+
+  console.log(selected);
 
   return (
     <PageLayout>
@@ -99,46 +93,68 @@ const ConfirmPage = () => {
       </h2>
       {user &&
         user.map((u, index) => (
-          <div key={index}>
-            <div className='w-60 montserratFont flex flex-row mb-6'>
-              {/* <p className='mr-4'>{u.name}</p>
-              <ConfirmationState state={u.attendance ?? ''} /> */}
-              <table>
-                <thead>
-                  <tr>Nombre y apellido</tr>
-                  <tr>confirmacion</tr>
-                </thead>
-                <tbody>
-                  <tr>{u.name}</tr>
-                  <tr className={`${verifyAttendance(u.attendance)?.style}`}>
-                    {verifyAttendance(u.attendance)?.attendance}
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <select
-              value={selected}
-              onChange={(e) => setSelected(e.target.value)}
-              className='montserratFont'
+          <div
+            key={index}
+            className='w-1/3 h-15 flex flex-row justify-center items-center m-2'
+          >
+            <form
+              onSubmit={() => handleSubmit(u.id)}
+              className='w-full h-max flex flex-row items-center justify-center'
             >
-              <option value='CONFIRM'>Voy</option>
-              <option value='DENIED'>No voy</option>
-            </select>
-            <UIButton
-              buttonText='Confirmar'
-              handleClick={handleConfirmButton}
-            />
+              <div className='w-80 montserratFont flex flex-row text-center'>
+                <p className='mr-10 min-w-36'>{u.name}</p>
+                <p
+                  className={`${verifyAttendance(u.attendance)?.style} min-w-24`}
+                >
+                  {verifyAttendance(u.attendance)?.attendance}
+                </p>
+              </div>
+              <select
+                value={selected[u.id] || 'DEFAULT'}
+                onChange={(e) => {
+                  if (
+                    e.target.value === 'CONFIRM' ||
+                    e.target.value === 'DENIED'
+                  ) {
+                    setSelected({ ...selected, [u.id]: e.target.value });
+                  }
+                }}
+                className='montserratFont w-28 h-8 text-center bg-white rounded-md m-2'
+              >
+                <option value='DEFAULT'>-</option>
+                <option value='CONFIRM'>Voy</option>
+                <option value='DENIED'>No voy</option>
+              </select>
+              <UIButton
+                tailwindStyle='h-8 w-24 rounded-md montserratFont text-sm border-2 font-thin ml-6 transition-transform ease-in-out duration-300 hover:bg-grey'
+                buttonText='Confirmar'
+                type={selected[u.id] ? 'submit' : 'button'}
+                handleClick={() =>
+                  selected[u.id]
+                    ? alert(
+                        selected[u.id] === 'CONFIRM'
+                          ? 'Gracias por acompañaros'
+                          : 'Lamentamos que no puedas acompañarnos, pero no pasa nada... Aún asi te queremos',
+                      )
+                    : alert('Tenés que decir si vas o no vas')
+                }
+              />
+            </form>
           </div>
         ))}
       <div className='mt-6'>
         <input
-          className='bg-dark-black border-2 border-dark-white montserratFont rounded-md focus:border-dark-white mt-2 mb-2 h-9 p-2'
+          className='bg-dark-black border-2 border-dark-white montserratFont rounded-md focus:border-dark-white mt-2 mb-2 h-10 p-2'
           name='name'
           placeholder='Nombre y apellido'
           onChange={handleInputChange}
           value={name}
         />
-        <UIButton buttonText='Buscar' handleClick={handleSearchButton} />
+        <UIButton
+          tailwindStyle='h-10 w-32 rounded-md montserratFont border-2 font-semibold mt-4 ml-6 dtransition-transform ease-in-out duration-300 hover:bg-grey'
+          buttonText='Buscar'
+          handleClick={handleSearchButton}
+        />
       </div>
       <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-14 md:mr-8 lg:mr-18 xl:mr-24 lg:mt-16'>
         <div

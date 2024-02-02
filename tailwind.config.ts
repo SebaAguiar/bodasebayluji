@@ -16,6 +16,7 @@ const config: Config = {
       red: '#FC0000',
       green: '#00FC2A',
       orange: 'FCB700',
+      grey: '#d1d1d1',
     },
     extend: {
       height: {
@@ -30,6 +31,24 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
+      spacing: {
+        '100': '25rem',
+        '110': '30rem',
+        '120': '35rem',
+        '130': '40rem',
+        '140': '45rem',
+        '150': '50rem',
+        '160': '55rem',
+        '170': '60rem',
+        '180': '65rem',
+        '190': '70rem',
+        '200': '75rem',
+        '210': '80rem',
+        '220': '85rem',
+        '230': '90rem',
+        '240': '95rem',
+        '242': '96rem',
       },
       fontFamily: {
         sans: ['ProximaNova', 'Helvetica', 'Arial', 'sans-serif'],
