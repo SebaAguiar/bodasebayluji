@@ -2,8 +2,8 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import { configureStore } from '@reduxjs/toolkit';
-import sideReducer from './features/slices/sideSlice';
+import React from 'react';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -17,14 +17,12 @@ import sideReducer from './features/slices/sideSlice';
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
+const NavButton = () => {
+  return <div></div>;
+};
+
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export const store = configureStore({
-  reducer: {
-    side: sideReducer,
-  },
-});
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export default NavButton;

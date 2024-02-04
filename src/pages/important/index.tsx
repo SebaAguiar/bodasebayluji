@@ -21,7 +21,7 @@ import styles from '@/styles/landingStyles.module.css';
 
 const ContactPage = () => {
   return (
-    <PageLayout>
+    <>
       <section className='w-1/2 flex montserratFont text-lg flex-col justify-center items-center'>
         <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
           <div id={styles.websiteDecoration} className='w-full h-full'></div>
@@ -129,7 +129,7 @@ const ContactPage = () => {
           ></div>
         </div>
       </section>
-    </PageLayout>
+    </>
   );
 };
 

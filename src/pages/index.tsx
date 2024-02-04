@@ -29,7 +29,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <PageLayout>
+    <>
       <header
         id={styles.landingHeader}
         className='w-full h-152 flex justify-center items-center bg-no-repeat'
@@ -93,6 +93,6 @@ export default function Home() {
         {/* <Image src={headerImage} alt="alt" width={0} height={0} className='' /> */}
         {/* <h1 className='text-3xl'>SEBA Y LUJI</h1> */}
       </footer>
-    </PageLayout>
+    </>
   );
 }

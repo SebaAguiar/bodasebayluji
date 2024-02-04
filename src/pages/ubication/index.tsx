@@ -22,7 +22,7 @@ import styles from '@/styles/landingStyles.module.css';
 
 const UbicationPage = () => {
   return (
-    <PageLayout>
+    <>
       <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
@@ -59,7 +59,7 @@ const UbicationPage = () => {
           className='w-full h-full transform scale-y-[-1] scale-x-[-1]'
         ></div>
       </div>
-    </PageLayout>
+    </>
   );
 };
 

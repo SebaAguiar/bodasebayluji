@@ -3,6 +3,7 @@
  ****************************************************************************************************************************************************/
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 /****************************************************************************************************************************************************
@@ -29,14 +30,19 @@ type TypeNavBarProps = {
  ****************************************************************************************************************************************************/
 
 const UINavBar: React.FC<TypeNavBarProps> = ({ title, image, links }) => {
+  const router = useRouter();
+
   return (
-    <nav className='w-full h-30 flex flex-col justify-center items-center bg-background2 z-10 sticky top-0'>
+    <nav className='md:w-full md:h-30 flex flex-col items-end md:justify-center md:items-center md:bg-background2 z-10 sticky top-0'>
       <h5 className='text-4xl font-medium mb-8 palmatonFont relative top-0'>
         {title}
       </h5>
       <div className='w-5/6 flex items-center justify-center sticky top-0'>
         {links.map((link, index) => (
-          <div key={index} className='mx-4 montserratFont font-light text-xl'>
+          <div
+            key={index}
+            className={`mx-4 montserratFont font-light text-lg hover:underline underline-offset-8 ${router.pathname === link.href ? 'underline' : ''}`}
+          >
             <Link key={index} href={link.href}>
               {link.text}
             </Link>

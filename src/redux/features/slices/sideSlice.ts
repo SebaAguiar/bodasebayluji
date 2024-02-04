@@ -2,16 +2,23 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import { configureStore } from '@reduxjs/toolkit';
-import sideReducer from './features/slices/sideSlice';
+import { createSlice } from '@reduxjs/toolkit';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
+type TypeSliceInitialState = {
+  active: boolean;
+};
+
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+
+const initialState: TypeSliceInitialState = {
+  active: false,
+};
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -20,11 +27,15 @@ import sideReducer from './features/slices/sideSlice';
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export const store = configureStore({
-  reducer: {
-    side: sideReducer,
+export const sideSlice = createSlice({
+  name: 'sideSlice',
+  initialState,
+  reducers: {
+    toggleSide: (state) => {
+      state.active = !state.active;
+    },
   },
 });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export const { toggleSide } = sideSlice.actions;
+export default sideSlice.reducer;

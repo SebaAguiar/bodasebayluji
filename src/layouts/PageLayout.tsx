@@ -5,6 +5,8 @@
 import React from 'react';
 import NavBar from '../components/UI-NavBar';
 import UIFooter from '@/components/UI-Footer';
+import { useSelector } from 'react-redux';
+import { useAppSelector } from '@/redux/hooks';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -42,19 +44,19 @@ const navBarLinks = [
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
- ****************************************************************************************************************************************************/
+ ******************************************************************************** ********************************************************************/
 
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
+  const active = useAppSelector((state) => state.side.active);
+
   return (
-    <>
-      <div className='w-screen h-screen absolute'>
-        <NavBar title='S&L' links={navBarLinks} />
-        <main className='w-screen min-h-screen flex flex-col justify-center items-center bg-background'>
-          {children}
-        </main>
-        <UIFooter />
-      </div>
-    </>
+    <div className='w-full h-full absolute'>
+      <NavBar title='S&L' links={navBarLinks} />
+      <main className='w-full min-full flex flex-col justify-center items-center'>
+        {children}
+      </main>
+      <UIFooter />
+    </div>
   );
 };
 
