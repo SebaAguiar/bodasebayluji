@@ -2,8 +2,11 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
+import { toggleSide } from '@/redux/features/slices/sideSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import React from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { MdMenu, MdOutlineClose } from 'react-icons/md';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -18,7 +21,17 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
  ****************************************************************************************************************************************************/
 
 const NavButton = () => {
-  return <div></div>;
+  const active = useAppSelector((state) => state.side.active);
+  const dispatch = useAppDispatch();
+
+  return (
+    <button
+      className={`w-10 h-10 flex justify-center items-center text-3xl text-[#A9A9A9] fixed left-5 top-6 z-20 lg:hidden transition-all duration-500 ease-in-out`}
+      onClick={() => dispatch(toggleSide())}
+    >
+      {active ? <MdOutlineClose /> : <MdMenu />}
+    </button>
+  );
 };
 
 /****************************************************************************************************************************************************

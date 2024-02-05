@@ -35,31 +35,39 @@ export default function Home() {
         className='w-full h-152 flex justify-center items-center bg-no-repeat'
       >
         {/* <Image src={headerImage} alt="alt" width={0} height={0} className='' /> */}
-        {/* <h1 className='text-3xl'>SEBA Y LUJI</h1> */}
+        <h1 className='text-5xl md:text-6xl palmatonFont text-[#fff]'>
+          Seba & Luji
+        </h1>
       </header>
-      <section className='w-full flex flex-col justify-center items-center'>
-        <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
-          <div id={styles.websiteDecoration} className='w-full h-full'></div>
-        </div>
-        <div className='w-2/3 h-60 flex flex-col justify-center items-center mt-16 mb-16'>
-          <h3 className='text-6xl palmatonFont mb-20'>¡Nos casamos!</h3>
-          <h1 className='text-5xl montserratFont font-bold'>16 MARZO 2024</h1>
-          <h3 className='text-6xl palmatonFont mt-20'>
-            Concepción del Uruguay, Entre Ríos
-          </h3>
-        </div>
-        <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
-          <div
-            id={styles.websiteDecoration}
-            className='w-full h-full transform scale-y-[-1] scale-x-[-1]'
-          ></div>
+      <section className='w-full flex flex-col text-center px-4 justify-center items-center'>
+        <div className='w-full flex flex-col justify-center items-center'>
+          <div className='w-80 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
+            <div id={styles.websiteDecoration} className='w-full h-full'></div>
+          </div>
+          <div className='w-full h-max md:w-2/3 md:h-60 flex flex-col justify-center items-center mt-16 mb-16'>
+            <h3 className='text-4xl md:text-6xl palmatonFont mb-20'>
+              ¡Nos casamos!
+            </h3>
+            <h1 className='text-3xl md:text-5xl montserratFont font-bold'>
+              16 MARZO 2024
+            </h1>
+            <h3 className='text-4xl md:text-5xl palmatonFont mt-20'>
+              Concepción del Uruguay, Entre Ríos
+            </h3>
+          </div>
+          <div className='w-80 h-32 mt-5 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
+            <div
+              id={styles.websiteDecoration}
+              className='w-full h-full transform scale-y-[-1] scale-x-[-1]'
+            ></div>
+          </div>
         </div>
 
         <div className='w-full flex flex-col justify-center items-center text-center mb-28'>
-          <h2 className='text-color-2 text-6xl font-medium mt-24 mb-8 palmatonFont'>
+          <h2 className='text-color-2 text-5xl md:text-6xl font-medium mt-24 mb-8 palmatonFont'>
             ¡Bienvenid@s a nuestra boda!
           </h2>
-          <div className='text-xl montserratFont mx-36 px-48 w-2/3'>
+          <div className='text-xl montserratFont w-full px-10 md:w-2/3'>
             <p className='my-5'>¡Nos casamos y estamos súper felices!</p>
             <p className='my-5'>
               Es tanta la alegría que queremos compartir con vos todo nuestro

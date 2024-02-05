@@ -55,21 +55,21 @@ const ContactPage = () => {
 
   return (
     <>
-      <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
+      <div className='w-80 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
-      <div className='w-1/2 montserratFont text-lg flex flex-col justify-center items-center mb-6'>
-        <h1 className='text-6xl text-color-2 palmatonFont font-regula mb-5'>
+      <div className='w-full px-10 md:w-1/2 montserratFont text-lg flex flex-col justify-center items-center mb-6'>
+        <h1 className='text-5xl md:text-6xl text-color-2 palmatonFont font-regula mb-5'>
           ¿Alguna duda?
         </h1>
         <p className='text-center'>
           Si tenés cualquier pregunta para nosotros o nos querés comentar algo,
           ¡mandanos un mensajito!
         </p>
-        <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
+        <div className='bg-color-3 w-80 md:w-96 h-[1px] mt-8'></div>
       </div>
       <form
-        className='w-7/12 text-dark-white montserratFont font-light flex flex-col justify-center items-center'
+        className='w-full md:w-7/12 text-dark-white montserratFont font-light flex flex-col justify-center items-center'
         onSubmit={handleSubmit}
       >
         <div className='flex flex-col-reverse w-2/3'>
@@ -128,7 +128,7 @@ const ContactPage = () => {
           Enviar
         </button>
       </form>
-      <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
+      <div className='w-80 h-32 md:h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
         <div
           id={styles.websiteDecoration}
           className='w-full h-full transform scale-y-[-1] scale-x-[-1]'

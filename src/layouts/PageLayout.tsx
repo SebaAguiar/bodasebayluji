@@ -5,8 +5,10 @@
 import React from 'react';
 import NavBar from '../components/UI-NavBar';
 import UIFooter from '@/components/UI-Footer';
-import { useSelector } from 'react-redux';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { toggleSide } from '@/redux/features/slices/sideSlice';
+import { MdMenu, MdOutlineClose } from 'react-icons/md';
+import NavButton from '@/components/NavButton';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -26,7 +28,7 @@ const navBarLinks = [
   },
   {
     href: '/confirm',
-    text: 'CONFIRMÁ TU ASISTENCIA',
+    text: 'CONFIRMAR ASISTENCIA',
   },
   {
     href: '/contact',
@@ -45,14 +47,12 @@ const navBarLinks = [
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ******************************************************************************** ********************************************************************/
-
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
-  const active = useAppSelector((state) => state.side.active);
-
   return (
-    <div className='w-full h-full absolute'>
+    <div className='w-screen h-screen flex flex-col'>
+      <NavButton />
       <NavBar title='S&L' links={navBarLinks} />
-      <main className='w-full min-full flex flex-col justify-center items-center'>
+      <main className='w-full min-h-screen flex flex-col justify-center items-center'>
         {children}
       </main>
       <UIFooter />

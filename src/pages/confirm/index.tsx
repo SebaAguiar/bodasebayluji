@@ -41,13 +41,13 @@ const verifyAttendance = (attendance: string | undefined) => {
   }
   if (attendance === 'DENIED') {
     return {
-      attendance: 'Dije "no voy"',
+      attendance: '"No voy"',
       style: 'text-red',
     };
   }
   if (attendance === 'CONFIRM') {
     return {
-      attendance: 'Dije "voy"',
+      attendance: '"Si voy"',
       style: 'text-green',
     };
   }
@@ -57,6 +57,7 @@ const ConfirmPage = () => {
   const [selected, setSelected] = useState<TypeSelectedState>({});
   const [user, setUser] = useState<TypeUser[]>([]);
   const [name, setName] = useState('');
+  const [userLength, setUserLength] = useState(0);
 
   const handleInputChange = (e: any) => {
     if (e.target.name === 'name') {
@@ -69,6 +70,11 @@ const ConfirmPage = () => {
   const handleSearchButton = async () => {
     const fetchedUser = await trpc.user.getUser.query({ name: name });
     setUser(fetchedUser ?? []);
+    if (fetchedUser) {
+      setUserLength(fetchedUser.length);
+    } else {
+      setUserLength(0);
+    }
   };
 
   const handleSubmit = async (id: string) => {
@@ -78,33 +84,31 @@ const ConfirmPage = () => {
     });
   };
 
-  console.log(selected);
-
   return (
     <>
-      <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-10 md:ml-8 lg:ml-18 xl:ml-24 lg:mt-16'>
+      <div className='w-80 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
-      <h1 className='text-color-2 text-6xl text-center mb-2 palmatonFont'>
+      <h1 className='text-color-2 text-5xl md:text-6xl text-center mb-2 palmatonFont'>
         ¿Nos acompañas o te lo perdés?
       </h1>
-      <h2 className='montserratFont text-xl mb-8'>
+      <h2 className='montserratFont text-lg md:text-xl mt-4 mb-8'>
         Buscate poniendo tu nombre y apellido
       </h2>
       {user &&
         user.map((u, index) => (
           <div
             key={index}
-            className='w-1/3 h-15 flex flex-row justify-center items-center m-2'
+            className='w-full md:w-1/3 h-30 md:h-15 flex flex-row justify-center items-center m-2'
           >
             <form
               onSubmit={() => handleSubmit(u.id)}
-              className='w-full h-max flex flex-row items-center justify-center'
+              className='w-full h-max flex flex-row flex-wrap items-center justify-center'
             >
-              <div className='w-80 montserratFont flex flex-row text-center'>
-                <p className='mr-10 min-w-36'>{u.name}</p>
+              <div className='md:w-80 montserratFont flex flex-row text-center'>
+                <p className='mr-10 min-w-20 md:min-w-36'>{u.name}</p>
                 <p
-                  className={`${verifyAttendance(u.attendance)?.style} min-w-24`}
+                  className={`${verifyAttendance(u.attendance)?.style} miw-w-14 md:min-w-24`}
                 >
                   {verifyAttendance(u.attendance)?.attendance}
                 </p>
@@ -139,24 +143,27 @@ const ConfirmPage = () => {
                     : alert('Tenés que decir si vas o no vas')
                 }
               />
+              {userLength > 1 && userLength !== index + 1 && (
+                <div className='bg-color-3 w-80 h-[1px] mt-10 mb-10'></div>
+              )}
             </form>
           </div>
         ))}
-      <div className='mt-6'>
+      <div className='flex flex-col md:flex-row justify-center items-center mt-6'>
         <input
-          className='bg-dark-black border-2 border-dark-white montserratFont rounded-md focus:border-dark-white mt-2 mb-2 h-10 p-2'
+          className='border-2 montserratFont rounded-md mt-2 mb-2 h-10 p-2'
           name='name'
           placeholder='Nombre y apellido'
           onChange={handleInputChange}
           value={name}
         />
         <UIButton
-          tailwindStyle='h-10 w-32 rounded-md montserratFont border-2 font-semibold mt-4 ml-6 dtransition-transform ease-in-out duration-300 hover:bg-grey'
+          tailwindStyle='h-10 w-32 rounded-md montserratFont border-2 font-semibold md:ml-6 dtransition-transform ease-in-out duration-300 hover:bg-grey'
           buttonText='Buscar'
           handleClick={handleSearchButton}
         />
       </div>
-      <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-14 md:mr-8 lg:mr-18 xl:mr-24 lg:mt-16'>
+      <div className='w-80 h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
         <div
           id={styles.websiteDecoration}
           className='w-full h-full transform scale-y-[-1] scale-x-[-1]'

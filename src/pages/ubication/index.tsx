@@ -23,23 +23,23 @@ import styles from '@/styles/landingStyles.module.css';
 const UbicationPage = () => {
   return (
     <>
-      <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
+      <div className='w-80 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
-      <div className='w-full text-lg flex montserratFont  flex-col justify-center items-center'>
-        <h1 className='text-color-2 text-6xl text-center mb-8 palmatonFont'>
+      <div className='w-full text-lg text-center flex montserratFont px-10 flex-col justify-center items-center'>
+        <h1 className='text-color-2 text-5xl md:text-6xl text-center mb-8 palmatonFont'>
           Ubicación
         </h1>
         <p>
           La ceremonia y la fiesta son <strong>en el mismo lugar</strong>, así
           que <strong>no hay forma de que te pierdas en el camino</strong>😂🤭
         </p>
-        <h2 className='montserratFont text-lg text-color-2'>
+        <h2 className='montserratFont mt-1 text-lg text-color-2'>
           ¡No hay excusas para llegar tarde!
         </h2>
       </div>
-      <div className='w-full flex flex-col text-lg justify-center items-center'>
-        <ul className='flex flex-col montserratFont items-center justify-center list-disc m-4'>
+      <div className='w-full flex flex-col text-center text-lg mt-4 justify-center items-center'>
+        <ul className='flex flex-col  montserratFont px-8 items-center justify-center list-disc m-4'>
           <li>
             Ceremonia: 18hs <strong>PUNTUAL</strong>
           </li>
@@ -53,7 +53,7 @@ const UbicationPage = () => {
           Ver Ubicacion
         </Link>
       </div>
-      <div className='w-1/3 h-32 md:mr-8 lg:mr-18 xl:mr-24 mb-10'>
+      <div className='w-80 h-32 md:h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
         <div
           id={styles.websiteDecoration}
           className='w-full h-full transform scale-y-[-1] scale-x-[-1]'

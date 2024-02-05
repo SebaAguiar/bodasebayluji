@@ -2,6 +2,7 @@
   background-image: url('/portada-web-comprimida.png');
   background-size: cover;
   position: relative;
+  background-position: center;
   z-index: 0;
   bottom: 64px;
 }
@@ -16,5 +17,6 @@
   background-image: url(https://cdn0.casamientos.com.ar/website/fotos/1/9/6/5/bg_t30_345691_c205113_footer.jpg?v=1706073392);
   background-size: cover;
   position: relative;
+  background-position: center;
   z-index: 0;
 }

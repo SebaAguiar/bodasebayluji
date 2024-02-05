@@ -22,14 +22,14 @@ import styles from '@/styles/landingStyles.module.css';
 const ContactPage = () => {
   return (
     <>
-      <section className='w-1/2 flex montserratFont text-lg flex-col justify-center items-center'>
-        <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
+      <section className='w-full px-10 md:w-1/2 flex montserratFont text-lg flex-col justify-center items-center'>
+        <div className='w-80 h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
           <div id={styles.websiteDecoration} className='w-full h-full'></div>
         </div>
-        <div className='w-4/5 h-60 flex flex-col justify-between items-center text-center'>
+        <div className='w-4/5 h-80 md:h-60 flex flex-col justify-between items-center text-center mb-8'>
           <div>
             <div className='h-20'></div>
-            <h1 className='text-color-2 palmatonFont text-6xl mb-4'>
+            <h1 className='text-color-2 palmatonFont text-5xl md:text-6xl mb-4'>
               ¡Importante!
             </h1>
             <p className='mt-2'>
@@ -40,9 +40,14 @@ const ContactPage = () => {
               para el gran día:
             </p>
           </div>
-          <div className='bg-color-3 w-130 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-80 md:w-130 h-[1px] mb-10'></div>
         </div>
-        <div className='flex flex-col justify-center items-center text-center mt-8'>
+
+        {/*
+         **AVISOS
+         */}
+
+        <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
             Vestimenta
           </h2>
@@ -66,9 +71,9 @@ const ContactPage = () => {
               </strong>
             </p>
           </div>
-          <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-64 md:w-96 h-[1px] mt-8'></div>
         </div>
-        <div className='flex flex-col justify-center items-center text-center mt-8'>
+        <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
             Bebida a la Canasta
           </h2>
@@ -82,9 +87,9 @@ const ContactPage = () => {
               hielo)
             </p>
           </div>
-          <div className='bg-color-3 w-110 h-[1px] mt-8'></div>
+          <div className='bg-color-3  w-80 md:w-110 h-[1px] mt-8'></div>
         </div>
-        <div className='flex flex-col justify-center items-center text-center mt-8'>
+        <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
             Fecha y Hora
           </h2>
@@ -102,9 +107,9 @@ const ContactPage = () => {
               <li>Lugar: Capilla Nuestra Señora de Luján, Talita</li>
             </ul>
           </div>
-          <div className='bg-color-3 w-96 h-[1px] mt-8'></div>
+          <div className='bg-color-3 w-60 md:w-96 h-[1px] mt-8'></div>
         </div>
-        <div className='flex flex-col justify-center items-center text-center mt-8'>
+        <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
           <h2 className='text-color-2 palmatonFont text-5xl mb-4'>Regalo</h2>
           <div className='m-2'>
             <p>
@@ -122,7 +127,7 @@ const ContactPage = () => {
             <p>O el día de la boda en la urna que estará presente.</p>
           </div>
         </div>
-        <div className='w-1/3 h-32 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
+        <div className='w-80 h-32 md:h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
           <div
             id={styles.websiteDecoration}
             className='w-full h-full transform scale-y-[-1] scale-x-[-1]'
