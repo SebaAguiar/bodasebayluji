@@ -7,6 +7,7 @@ import Link from 'next/link';
 import React from 'react';
 import { IoTrailSignOutline } from 'react-icons/io5';
 import styles from '@/styles/landingStyles.module.css';
+import localFont from 'next/font/local';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -15,6 +16,10 @@ import styles from '@/styles/landingStyles.module.css';
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+
+const palmatonFont = localFont({
+  src: '../../../public/Palmaton.ttf',
+});
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -27,7 +32,9 @@ const UbicationPage = () => {
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
       <div className='w-full text-lg text-center flex montserratFont px-10 flex-col justify-center items-center'>
-        <h1 className='text-color-2 text-5xl md:text-6xl text-center mb-8 palmatonFont'>
+        <h1
+          className={`${palmatonFont.className} text-color-2 text-5xl md:text-6xl text-center mb-8`}
+        >
           Ubicación
         </h1>
         <p>

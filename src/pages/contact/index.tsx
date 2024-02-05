@@ -7,6 +7,7 @@ import PageLayout from '@/layouts/PageLayout';
 import { trpc } from '@/utils/trpc';
 import React, { useState } from 'react';
 import styles from '@/styles/landingStyles.module.css';
+import localFont from 'next/font/local';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -15,6 +16,10 @@ import styles from '@/styles/landingStyles.module.css';
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+
+const palmatonFont = localFont({
+  src: '../../../public/Palmaton.ttf',
+});
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -59,7 +64,9 @@ const ContactPage = () => {
         <div id={styles.websiteDecoration} className='w-full h-full'></div>
       </div>
       <div className='w-full px-10 md:w-1/2 montserratFont text-lg flex flex-col justify-center items-center mb-6'>
-        <h1 className='text-5xl md:text-6xl text-color-2 palmatonFont font-regula mb-5'>
+        <h1
+          className={`${palmatonFont.className} text-5xl md:text-6xl text-color-2 font-regula mb-5`}
+        >
           ¿Alguna duda?
         </h1>
         <p className='text-center'>

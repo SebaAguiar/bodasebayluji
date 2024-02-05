@@ -6,6 +6,7 @@
 import PageLayout from '@/layouts/PageLayout';
 import React, { useState } from 'react';
 import styles from '@/styles/landingStyles.module.css';
+import localFont from 'next/font/local';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -14,6 +15,10 @@ import styles from '@/styles/landingStyles.module.css';
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+
+const palmatonFont = localFont({
+  src: '../../../public/Palmaton.ttf',
+});
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -28,7 +33,9 @@ const ContactPage = () => {
       <div className='w-4/5 h-80 md:h-60 flex flex-col justify-between items-center text-center mb-8'>
         <div>
           <div className='h-20'></div>
-          <h1 className='text-color-2 palmatonFont text-5xl md:text-6xl mb-4'>
+          <h1
+            className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl md:text-6xl mb-4`}
+          >
             ¡Importante!
           </h1>
           <p className='mt-2'>
@@ -47,7 +54,11 @@ const ContactPage = () => {
        */}
 
       <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
-        <h2 className='text-color-2 palmatonFont text-5xl mb-4'>Vestimenta</h2>
+        <h2
+          className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
+        >
+          Vestimenta
+        </h2>
         <div className='m-2'>
           <p>
             Sé libre de ponerte{' '}
@@ -71,7 +82,9 @@ const ContactPage = () => {
         <div className='bg-color-3 w-64 md:w-96 h-[1px] mt-8'></div>
       </div>
       <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
-        <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
+        <h2
+          className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
+        >
           Bebida a la Canasta
         </h2>
         <div className='m-2'>
@@ -87,7 +100,9 @@ const ContactPage = () => {
         <div className='bg-color-3  w-80 md:w-110 h-[1px] mt-8'></div>
       </div>
       <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
-        <h2 className='text-color-2 palmatonFont text-5xl mb-4'>
+        <h2
+          className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
+        >
           Fecha y Hora
         </h2>
         <div className='m-2'>
@@ -107,7 +122,11 @@ const ContactPage = () => {
         <div className='bg-color-3 w-60 md:w-96 h-[1px] mt-8'></div>
       </div>
       <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
-        <h2 className='text-color-2 palmatonFont text-5xl mb-4'>Regalo</h2>
+        <h2
+          className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
+        >
+          Regalo
+        </h2>
         <div className='m-2'>
           <p>
             <strong className='font-extrabold text-color-2'>
