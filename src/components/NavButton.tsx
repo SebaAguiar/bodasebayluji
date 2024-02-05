@@ -25,12 +25,14 @@ const NavButton = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <button
-      className={`w-10 h-10 flex justify-center items-center text-3xl text-[#A9A9A9] fixed left-5 top-6 z-20 lg:hidden transition-all duration-500 ease-in-out`}
-      onClick={() => dispatch(toggleSide())}
+    <div
+      className={`w-12 h-12 rounded-full flex justify-center items-center text-3xl fixed left-5 top-5 z-20 lg:hidden transition-all duration-500 ease-in-out`}
+      style={{ backgroundColor: active ? '' : 'rgba(222, 178, 177, 0.25)' }}
     >
-      {active ? <MdOutlineClose /> : <MdMenu />}
-    </button>
+      <button className='text-[#000]' onClick={() => dispatch(toggleSide())}>
+        {active ? <MdOutlineClose /> : <MdMenu />}
+      </button>
+    </div>
   );
 };
 
