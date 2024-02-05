@@ -45,13 +45,19 @@ export default function Home() {
             <div id={styles.websiteDecoration} className='w-full h-full'></div>
           </div>
           <div className='w-full h-max md:w-2/3 md:h-60 flex flex-col justify-center items-center mt-16 mb-16'>
-            <h3 className='text-4xl md:text-6xl palmatonFont mb-20'>
+            <h3
+              style={{ fontFamily: 'Palmaton' }}
+              className='text-4xl md:text-6xl mb-20'
+            >
               ¡Nos casamos!
             </h3>
             <h1 className='text-3xl md:text-5xl montserratFont font-bold'>
               16 MARZO 2024
             </h1>
-            <h3 className='text-4xl md:text-5xl palmatonFont mt-20'>
+            <h3
+              style={{ fontFamily: 'Palmaton' }}
+              className='text-4xl md:text-5xl mt-20'
+            >
               Concepción del Uruguay, Entre Ríos
             </h3>
           </div>
