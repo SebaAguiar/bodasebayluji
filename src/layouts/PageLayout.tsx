@@ -5,10 +5,8 @@
 import React from 'react';
 import NavBar from '../components/UI-NavBar';
 import UIFooter from '@/components/UI-Footer';
-import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { toggleSide } from '@/redux/features/slices/sideSlice';
-import { MdMenu, MdOutlineClose } from 'react-icons/md';
 import NavButton from '@/components/NavButton';
+import localFont from 'next/font/local';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -44,15 +42,23 @@ const navBarLinks = [
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
 
+const palmatonFont = localFont({
+  src: '../../public/Palmaton.ttf',
+});
+
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ******************************************************************************** ********************************************************************/
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
-    <div className='w-screen h-screen flex flex-col'>
+    <div
+      className={`${palmatonFont.className} w-screen h-screen flex flex-col`}
+    >
       <NavButton />
       <NavBar title='S&L' links={navBarLinks} />
-      <main className='w-full min-h-screen flex flex-col justify-center items-center'>
+      <main
+        className={`${palmatonFont.className} w-full min-h-screen flex flex-col justify-center items-center`}
+      >
         {children}
       </main>
       <UIFooter />
