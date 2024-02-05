@@ -7,6 +7,7 @@ import NavBar from '../components/UI-NavBar';
 import UIFooter from '@/components/UI-Footer';
 import NavButton from '@/components/NavButton';
 import localFont from 'next/font/local';
+import PagesMain from '@/components/transitions/PagesMain';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -56,11 +57,11 @@ const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
     >
       <NavButton />
       <NavBar title='S&L' links={navBarLinks} />
-      <main
-        className={`${palmatonFont.className} w-full min-h-screen flex flex-col justify-center items-center`}
+      <PagesMain
+        style={`${palmatonFont.className} w-full min-h-screen flex flex-col justify-center items-center`}
       >
         {children}
-      </main>
+      </PagesMain>
       <UIFooter />
     </div>
   );
