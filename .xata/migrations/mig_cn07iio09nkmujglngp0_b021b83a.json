@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn07iio09nkmujglngp0",
+  "parentID": "mig_cn07hgg09nkmujglngo0",
+  "checksum": "1:b021b83a4d5cbf9e54b8137390e799188a6d73bb0d500a3993d4cf6a0ca53022",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "Invitados-02-05-2024"
+      }
+    }
+  ]
+}

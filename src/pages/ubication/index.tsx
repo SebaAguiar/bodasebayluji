@@ -35,7 +35,7 @@ const UbicationPage = () => {
         <h1
           className={`${palmatonFont.className} text-color-2 text-5xl md:text-6xl text-center mb-8`}
         >
-          Ubicación
+          Ubicación y hora
         </h1>
         <p>
           La ceremonia y la fiesta son <strong>en el mismo lugar</strong>, así
@@ -48,9 +48,9 @@ const UbicationPage = () => {
       <div className='w-full flex flex-col text-center text-lg mt-4 justify-center items-center'>
         <ul className='flex flex-col  montserratFont px-8 items-center justify-center list-disc m-4'>
           <li>
-            Ceremonia: 18hs <strong>PUNTUAL</strong>
+            Ceremonia: 18:00hs <strong>PUNTUAL</strong>
           </li>
-          <li>Fiesta: 19hs</li>
+          <li>Fiesta: 19:30hs</li>
           <li>Lugar: Capilla Ntra. Señora de Luján - Talita</li>
         </ul>
         <Link

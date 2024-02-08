@@ -8,6 +8,8 @@ import UIFooter from '@/components/UI-Footer';
 import NavButton from '@/components/NavButton';
 import localFont from 'next/font/local';
 import PagesMain from '@/components/transitions/PagesMain';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -30,12 +32,12 @@ const navBarLinks = [
     text: 'CONFIRMAR ASISTENCIA',
   },
   {
-    href: '/contact',
-    text: 'CONTACTANOS',
+    href: '/ubication',
+    text: 'UBICACIÓN Y HORA',
   },
   {
-    href: '/ubication',
-    text: 'UBICACIÓN',
+    href: '/contact',
+    text: 'CONTACTANOS',
   },
 ];
 
@@ -47,23 +49,58 @@ const palmatonFont = localFont({
   src: '../../public/Palmaton.ttf',
 });
 
+const cases = [
+  {
+    href: '/',
+    title: 'Bienvenidos',
+  },
+  {
+    href: '/important',
+    title: 'Importante',
+  },
+  {
+    href: '/confirm',
+    title: 'Confirmar Asistencia',
+  },
+  {
+    href: '/contact',
+    title: 'Contactanos',
+  },
+  {
+    href: '/ubication',
+    title: 'Ubicacion y hora',
+  },
+];
+
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ******************************************************************************** ********************************************************************/
 const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
+  const router = useRouter();
   return (
-    <div
-      className={`${palmatonFont.className} w-screen h-screen flex flex-col`}
-    >
-      <NavButton />
-      <NavBar title='S&L' links={navBarLinks} />
-      <PagesMain
-        style={`${palmatonFont.className} w-full min-h-screen flex flex-col justify-center items-center`}
+    <>
+      <Head>
+        <title>
+          {cases.map((c, index) => {
+            if (router.pathname === c.href) {
+              return `S&L - ${c.title}`;
+            }
+          })}
+        </title>
+      </Head>
+      <div
+        className={`${palmatonFont.className} w-screen h-screen flex flex-col`}
       >
-        {children}
-      </PagesMain>
-      <UIFooter />
-    </div>
+        <NavButton />
+        <NavBar title='S&L' links={navBarLinks} />
+        <PagesMain
+          style={`${palmatonFont.className} w-full min-h-screen flex flex-col justify-center items-center`}
+        >
+          {children}
+        </PagesMain>
+        <UIFooter />
+      </div>
+    </>
   );
 };
 

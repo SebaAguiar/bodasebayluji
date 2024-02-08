@@ -99,28 +99,7 @@ const ContactPage = () => {
         </div>
         <div className='bg-color-3  w-80 md:w-110 h-[1px] mt-8'></div>
       </div>
-      <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
-        <h2
-          className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
-        >
-          Fecha y Hora
-        </h2>
-        <div className='m-2'>
-          <p>
-            No queremos que te pierdas nuestro gran día, así que te recordamos
-            estos datos importantísimos:
-          </p>
-          <ul>
-            <li>Fecha: 16 de marzo</li>
-            <li>
-              Hora: 18:00hs{' '}
-              <strong className='font-extrabold text-color-2'>puntual</strong>
-            </li>
-            <li>Lugar: Capilla Nuestra Señora de Luján, Talita</li>
-          </ul>
-        </div>
-        <div className='bg-color-3 w-60 md:w-96 h-[1px] mt-8'></div>
-      </div>
+
       <div className='w-full flex flex-col justify-center items-center text-center mt-8'>
         <h2
           className={`${palmatonFont.className} text-color-2 palmatonFont text-5xl mb-4`}
@@ -134,11 +113,12 @@ const ContactPage = () => {
             </strong>
           </p>
           <p>
-            Pero si querés colaborar con nuestra luna de miel, podés hacerlo:
+            Pero si querés nos querés ayudar con nuestro sueño de viajar, podés
+            hacerlo:
           </p>{' '}
           <p>
             <strong className='font-extrabold text-color-2'>ALIAS: </strong>
-            alias
+            <strong>bodasebayluji.mp</strong>
           </p>
           <p>O el día de la boda en la urna que estará presente.</p>
         </div>

@@ -7,24 +7,7 @@ import type {
 } from '@xata.io/client';
 
 const tables = [
-  {
-    name: 'Users',
-    columns: [
-      { name: 'name', type: 'string' },
-      { name: 'attendance', type: 'string', defaultValue: 'PENDING' },
-      { name: 'email', type: 'email' },
-      { name: 'phone', type: 'string' },
-      { name: 'direction', type: 'string' },
-      { name: 'gender', type: 'string' },
-      { name: 'age', type: 'string', defaultValue: 'ADULT' },
-      { name: 'user_table', type: 'link', link: { table: 'Tables' } },
-    ],
-  },
-  {
-    name: 'Tables',
-    columns: [{ name: 'number', type: 'int' }],
-    revLinks: [{ column: 'user_table', table: 'Users' }],
-  },
+  { name: 'Tables', columns: [{ name: 'number', type: 'int' }] },
   {
     name: 'Emails',
     columns: [
@@ -34,13 +17,30 @@ const tables = [
       { name: 'message', type: 'text' },
     ],
   },
+  {
+    name: 'Users',
+    columns: [
+      { name: 'NOMBRE', type: 'string' },
+      { name: 'APELLIDOS', type: 'string' },
+      { name: 'EMAIL', type: 'email' },
+      { name: 'TELFONO', type: 'string' },
+      { name: 'CELULAR', type: 'string' },
+      { name: 'GRUPO', type: 'string' },
+      { name: 'INVITADO', type: 'string' },
+      { name: 'CONFIRMADO', type: 'string' },
+      { name: 'EDAD', type: 'string' },
+      { name: 'DIRECCIN', type: 'string' },
+      { name: 'CODPOSTAL', type: 'string' },
+      { name: 'CIUDAD', type: 'string' },
+      { name: 'PROVINCIA', type: 'string' },
+      { name: 'MESA', type: 'string' },
+      { name: 'SEXO', type: 'string' },
+    ],
+  },
 ] as const;
 
 export type SchemaTables = typeof tables;
 export type InferredTypes = SchemaInference<SchemaTables>;
-
-export type Users = InferredTypes['Users'];
-export type UsersRecord = Users & XataRecord;
 
 export type Tables = InferredTypes['Tables'];
 export type TablesRecord = Tables & XataRecord;
@@ -48,10 +48,13 @@ export type TablesRecord = Tables & XataRecord;
 export type Emails = InferredTypes['Emails'];
 export type EmailsRecord = Emails & XataRecord;
 
+export type Users = InferredTypes['Users'];
+export type UsersRecord = Users & XataRecord;
+
 export type DatabaseSchema = {
-  Users: UsersRecord;
   Tables: TablesRecord;
   Emails: EmailsRecord;
+  Users: UsersRecord;
 };
 
 const DatabaseClient = buildClient();

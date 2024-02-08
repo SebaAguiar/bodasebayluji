@@ -30,14 +30,34 @@ export const getUser = publicProcedure
   .input(
     z.object({
       name: z.string(),
+      lastName: z.string(),
     }),
   )
   .query(async ({ input }) => {
     try {
-      const { name } = input;
-      return await xata.db[UsersTable].select([])
-        .filter({ name: { $iContains: name } })
-        .getMany();
+      const { name, lastName } = input;
+
+      if (name && !lastName) {
+        return await xata.db[UsersTable].select([])
+          .filter({ NOMBRE: { $iContains: name } })
+          .getMany();
+      }
+      if (lastName && !name) {
+        return await xata.db[UsersTable].select([])
+          .filter({ APELLIDOS: { $iContains: lastName } })
+          .getMany();
+      }
+      if (lastName && name) {
+        return await xata.db[UsersTable].select([])
+          .filter(
+            {
+              NOMBRE: { $iContains: name },
+            } && {
+              APELLIDOS: { $iContains: lastName },
+            },
+          )
+          .getMany();
+      }
     } catch (error) {
       console.log(error);
     }

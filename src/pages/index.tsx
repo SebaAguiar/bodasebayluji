@@ -63,13 +63,13 @@ export default function Home() {
             ¡Bienvenid@s a nuestra boda!
           </h2>
           <div className='text-xl montserratFont w-full px-10 md:w-2/3'>
-            <p className='my-5'>¡Nos casamos y estamos súper felices!</p>
+            {/* <p className='my-5'>¡Nos casamos y estamos súper felices!</p> */}
             <p className='my-5'>
               Es tanta la alegría que queremos compartir con vos todo nuestro
               amor. Por eso estamos preparando un momento hermoso para que lo
               disfrutes junto a nosotros.
             </p>
-            <p className='my-5'>
+            {/* <p className='my-5'>
               Mientras llega el gran día creamos esta web con varias secciones
               para que estés al día de todo y para compartir nuestra historia de
               amor.
@@ -85,13 +85,13 @@ export default function Home() {
               podés confirmar si vas al casamiento o no. <br />
               Porfa, confirmanos lo antes posible, así organizarlo nos será
               mucho más fácil.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
       <footer
         id={styles.landingFooter}
-        className='w-full h-72 flex justify-center items-center bg-no-repeat'
+        className='w-full h-72 lg:h-100 flex justify-center items-center bg-no-repeat'
       >
         {/* <Image src={headerImage} alt="alt" width={0} height={0} className='' /> */}
         {/* <h1 className='text-3xl'>SEBA Y LUJI</h1> */}

@@ -25,12 +25,13 @@ export type TypeAge = 'BABY' | 'CHILD' | 'ADULT';
 
 export type TypeUser = {
   id: string;
-  name?: string;
-  attendance?: TypeAttendance;
-  email?: string;
-  phone?: string;
-  direction?: string;
-  gender?: TypeGender;
+  NOMBRE?: string;
+  APELLIDOS?: string;
+  CONFIRMADO?: TypeAttendance;
+  EMAIL?: string;
+  TELFONO?: string;
+  DIRECCIN?: string;
+  SEXO?: TypeGender;
   age?: TypeAge;
   xata: {
     createdAt: string;

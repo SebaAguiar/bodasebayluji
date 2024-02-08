@@ -31,6 +31,5 @@ export const setConfirmation = publicProcedure
   )
   .mutation(async ({ input }) => {
     const { attendance, id } = input;
-    console.log(attendance, id);
-    return await xata.db[UsersTable].update(id, { attendance });
+    return await xata.db[UsersTable].update(id, { CONFIRMADO: attendance });
   });

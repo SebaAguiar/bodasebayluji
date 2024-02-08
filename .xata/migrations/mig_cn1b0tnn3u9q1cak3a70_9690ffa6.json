@@ -1,0 +1,13 @@
+{
+  "id": "mig_cn1b0tnn3u9q1cak3a70",
+  "parentID": "mig_cn1b0mton15dn831at50",
+  "checksum": "1:9690ffa6a8503500b4fed6dd06f514d9fc64b171d75b9e0b4282215fdc4040a5",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Users",
+        "oldName": "Invitados-02-06-2024"
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "mig_cn1b0mton15dn831at50",
+  "parentID": "mig_cn1avnton15dn831at3g",
+  "checksum": "1:f75bbce246a2c54d68ef1bcaa4c3076792d9f0c82974b005fe506a75a8566eed",
+  "operations": [
+    {
+      "addTable": {
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "NOMBRE",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "APELLIDOS",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "EMAIL",
+          "type": "email"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "TELFONO",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "CELULAR",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "GRUPO",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "INVITADO",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "CONFIRMADO",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "MEN",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "DIRECCIN",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "CODPOSTAL",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "CIUDAD",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "PROVINCIA",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "MESA",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "SEXO",
+          "type": "string"
+        },
+        "table": "Invitados-02-06-2024"
+      }
+    }
+  ]
+}
