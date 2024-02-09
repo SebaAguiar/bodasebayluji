@@ -113,7 +113,7 @@ const ContactPage = () => {
             </strong>
           </p>
           <p>
-            Pero si querés nos querés ayudar con nuestro sueño de viajar, podés
+            Pero si querés nos podés ayudar con nuestro sueño de viajar, podés
             hacerlo:
           </p>{' '}
           <p>
