@@ -64,7 +64,7 @@ const ConfirmPage = () => {
     if (e.target.name === 'name') {
       setName(e.target.value);
     }
-    if (e.target.name === 'lastNAme') {
+    if (e.target.name === 'lastName') {
       setLastName(e.target.value);
     }
   };
