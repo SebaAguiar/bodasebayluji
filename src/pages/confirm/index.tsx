@@ -198,6 +198,9 @@ const ConfirmPage = () => {
           buttonText='Buscar'
           handleClick={handleSearchButton}
         />
+        <p className='text-xs montserratFont text-center mt-2'>
+          Tenés tiempo de confirmar hasta el 20 de febrero
+        </p>
       </div>
       <div className='w-80 h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
         <div
