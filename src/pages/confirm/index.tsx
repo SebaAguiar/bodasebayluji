@@ -47,7 +47,7 @@ const verifyAttendance = (attendance: string | undefined) => {
   }
   if (attendance === 'CONFIRM') {
     return {
-      attendance: '"Si voy"',
+      attendance: '"Si, voy"',
       style: 'text-green',
     };
   }
