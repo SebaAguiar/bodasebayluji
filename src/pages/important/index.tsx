@@ -113,8 +113,7 @@ const ContactPage = () => {
             </strong>
           </p>
           <p>
-            Pero si querés nos podés ayudar con nuestro sueño de viajar, podés
-            hacerlo:
+            Pero si nos querés ayudar con nuestro sueño de viajar, podés hacerlo:
           </p>{' '}
           <p>
             <strong className='font-extrabold text-color-2'>ALIAS: </strong>
