@@ -41,7 +41,7 @@ const lujiMedia = [
   {
     name: 'whatsapp',
     icon: <FaWhatsapp />,
-    href: `https://api.whatsapp.com/send?phone=+543442673939&text=Hola,%20luji20quiero%20preguntarte...`,
+    href: `https://api.whatsapp.com/send?phone=+543442673939&text=Hola,%20luji%20quiero%20preguntarte...`,
   },
   {
     name: 'instagram',
