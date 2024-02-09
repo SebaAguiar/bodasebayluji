@@ -109,7 +109,7 @@ const ContactPage = () => {
         <div className='m-2'>
           <p>
             <strong className='font-extrabold text-color-2'>
-              ¡El mejor regalo que podés darnos es tu presencia!
+              ¡El mejor regalo que podés hacernos es tu presencia!
             </strong>
           </p>
           <p>
