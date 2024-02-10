@@ -4,7 +4,7 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import sideReducer from './features/slices/sideSlice';
-
+import guestsSlice from './features/slices/guestsSlice';
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
@@ -23,6 +23,7 @@ import sideReducer from './features/slices/sideSlice';
 export const store = configureStore({
   reducer: {
     side: sideReducer,
+    guests: guestsSlice,
   },
 });
 

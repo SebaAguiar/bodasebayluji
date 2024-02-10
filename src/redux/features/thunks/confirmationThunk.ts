@@ -2,9 +2,17 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { TypeUser } from '@/utils/types';
+import { trpc } from '@/utils/trpc';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
+
+type TypeState = {
+  guests: TypeUser[];
+};
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -17,25 +25,17 @@
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export type TypeAttendance = 'PENDIENTE' | 'CONFIRM' | 'CONFIRMADO' | 'DENIED';
-
-export type TypeGender = 'MALE' | 'FEMALE';
-
-// export type TypeAge = 'BABY' | 'CHILD' | 'ADULT';
-
-export type TypeUser = {
-  id: string;
-  NOMBRE?: string;
-  APELLIDOS?: string;
-  CONFIRMADO?: TypeAttendance;
-  EMAIL?: string;
-  TELFONO?: string;
-  DIRECCIN?: string;
-  SEXO?: TypeGender;
-  EDAD?: string;
-  xata: {
-    createdAt: string;
-    updatedAt: string;
-    version: number;
-  };
-};
+export const getGuests = createAsyncThunk(
+  'getGuests',
+  async (_, { getState }) => {
+    const state = getState() as TypeState;
+    try {
+      if (!state.guests.length) {
+        return await trpc.user.getUsers.query();
+      }
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  },
+);

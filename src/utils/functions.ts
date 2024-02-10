@@ -2,9 +2,18 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
+import { TypeUser } from './types';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
+
+type TypeTotalConfirmations = {
+  total: number;
+  confirmed: number;
+  pending: number;
+  denied: number;
+};
 
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -27,4 +36,32 @@ export const dateFormater = (date: string, lang: string, options: object) => {
   );
   const birth = newDate.toLocaleDateString(locales, options);
   return birth;
+};
+
+export const totalConfirmations = (confirmations: TypeUser[]) => {
+  if (!confirmations.length) {
+    return [];
+  }
+  let status: TypeTotalConfirmations = {
+    total: 0,
+    confirmed: 0,
+    pending: 0,
+    denied: 0,
+  };
+  status.total = confirmations.length;
+  confirmations.map((c) => {
+    if (c.CONFIRMADO) {
+      if (c.CONFIRMADO === 'PENDIENTE') {
+        status.pending += 1;
+      }
+      if (c.CONFIRMADO === 'CONFIRM' || c.CONFIRMADO === 'CONFIRMADO') {
+        status.confirmed += 1;
+      }
+      if (c.CONFIRMADO === 'DENIED') {
+        status.denied += 1;
+      }
+    }
+  });
+
+  return status;
 };

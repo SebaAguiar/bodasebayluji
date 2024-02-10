@@ -18,6 +18,14 @@ type LandingLayoutProps = {
   children: React.ReactNode;
 };
 
+type TypePaths = {
+  href: string;
+  title: string;
+};
+
+/****************************************************************************************************************************************************
+ * * DECLARATIONS
+ ****************************************************************************************************************************************************/
 const navBarLinks = [
   {
     href: '/',
@@ -40,10 +48,6 @@ const navBarLinks = [
     text: 'CONTACTANOS',
   },
 ];
-
-/****************************************************************************************************************************************************
- * * DECLARATIONS
- ****************************************************************************************************************************************************/
 
 const palmatonFont = localFont({
   src: '../../public/Palmaton.ttf',
@@ -72,6 +76,15 @@ const cases = [
   },
 ];
 
+const getPath = (paths: TypePaths[], route: string) => {
+  const path = paths.find((u) => {
+    if (u.href === route) {
+      return true;
+    }
+  });
+  return `Arsian - ${path?.title}`;
+};
+
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ******************************************************************************** ********************************************************************/
@@ -80,16 +93,10 @@ const PageLayout: React.FC<LandingLayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>
-          {cases.map((c, index) => {
-            if (router.pathname === c.href) {
-              return `S&L - ${c.title}`;
-            }
-          })}
-        </title>
+        <title>{getPath(cases, router.pathname)}</title>
       </Head>
       <div
-        className={`${palmatonFont.className} w-screen h-screen flex flex-col`}
+        className={`${palmatonFont.className} w-screen h-screen flex flex-col bg-background`}
       >
         <NavButton />
         <NavBar title='S&L' links={navBarLinks} />

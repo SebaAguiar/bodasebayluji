@@ -2,13 +2,24 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
+import { TypeUser } from '@/utils/types';
+import { createSlice } from '@reduxjs/toolkit';
+import { getGuests } from '../thunks/confirmationThunk';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 
+type TypeGuestSlice = {
+  guests: TypeUser[];
+};
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+
+const initialState: TypeGuestSlice = {
+  guests: [],
+};
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -17,25 +28,16 @@
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export type TypeAttendance = 'PENDIENTE' | 'CONFIRM' | 'CONFIRMADO' | 'DENIED';
+export const guestSlice = createSlice({
+  name: 'guestsSlice',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getGuests.fulfilled, (state, action) => {
+      state.guests = action.payload || [];
+    });
+  },
+});
 
-export type TypeGender = 'MALE' | 'FEMALE';
-
-// export type TypeAge = 'BABY' | 'CHILD' | 'ADULT';
-
-export type TypeUser = {
-  id: string;
-  NOMBRE?: string;
-  APELLIDOS?: string;
-  CONFIRMADO?: TypeAttendance;
-  EMAIL?: string;
-  TELFONO?: string;
-  DIRECCIN?: string;
-  SEXO?: TypeGender;
-  EDAD?: string;
-  xata: {
-    createdAt: string;
-    updatedAt: string;
-    version: number;
-  };
-};
+export const {} = guestSlice.actions;
+export default guestSlice.reducer;
