@@ -29,7 +29,7 @@ type TypeSelectedState = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const verifyAttendance = (attendance: string | undefined) => {
+export const verifyAttendance = (attendance: string | undefined) => {
   if (!attendance) {
     return null;
   }
