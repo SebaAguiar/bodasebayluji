@@ -198,6 +198,7 @@ const ConfirmPage = () => {
           buttonText='Buscar'
           handleClick={handleSearchButton}
         />
+      </div>
       <div className='w-80 h-32 mb-10 mt-10 md:mb-2 lg:mb-8 md:mr-8 lg:mr-18 xl:mr-24'>
         <div
           id={styles.websiteDecoration}
