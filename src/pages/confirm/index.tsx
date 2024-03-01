@@ -59,6 +59,7 @@ const ConfirmPage = () => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userLength, setUserLength] = useState(0);
+  const [message, setMessage] = useState('');
 
   const handleInputChange = (e: any) => {
     if (e.target.name === 'name') {
@@ -90,7 +91,6 @@ const ConfirmPage = () => {
       name,
       lastName,
     };
-
     const fetchedUser = await trpc.user.getUser.query(userToSearch);
     setUser(fetchedUser ?? []);
     if (fetchedUser) {
@@ -161,20 +161,29 @@ const ConfirmPage = () => {
               <UIButton
                 tailwindStyle='h-8 w-24 rounded-md montserratFont text-sm border-2 font-thin ml-6 transition-transform ease-in-out duration-300 hover:bg-grey'
                 buttonText='Confirmar'
-                type={selected[u.id] ? 'submit' : 'button'}
+                type={'button'}
                 handleClick={() =>
-                  selected[u.id]
-                    ? alert(
-                        selected[u.id] === 'CONFIRM'
-                          ? 'Gracias por acompañaros'
-                          : 'Lamentamos que no puedas acompañarnos, pero no pasa nada... Aún asi te queremos',
-                      )
-                    : alert('Tenés que decir si vas o no vas')
+                  // selected[u.id]
+                  //   ? alert(
+                  //       selected[u.id] === 'CONFIRM'
+                  //         ? 'Gracias por acompañaros'
+                  //         : 'Lamentamos que no puedas acompañarnos, pero no pasa nada... Aún asi te queremos',
+                  //     )
+                  //   : alert('Tenés que decir si vas o no vas')
+
+                  alert(
+                    'Lo sentimos pero ya se acabo el tiempo para confirmar la asistencia',
+                  )
                 }
               />
             </form>
           </div>
         ))}
+      {message && (
+        <div className='w-full text-center h-32 mt-10 md:mb-2 lg:mb-8 md:ml-8 lg:ml-18 xl:ml-24'>
+          <p className='mr-10 min-w-20 md:min-w-52 montserratFont'>{message}</p>
+        </div>
+      )}
       <p className='montserratFont text-sm mt-6'>Ojo con las tildes</p>
       <div className='flex flex-col justify-center items-center mt-1'>
         <input
@@ -193,6 +202,9 @@ const ConfirmPage = () => {
           value={lastName}
           onKeyDown={handleKeyPress}
         />
+        <p className='montserratFont m-2'>
+          Hay tiempo hasta el dia 29 de febrero
+        </p>
         <UIButton
           tailwindStyle='h-10 w-32 rounded-md montserratFont border-2 font-semibold dtransition-transform ease-in-out duration-300 hover:bg-grey'
           buttonText='Buscar'
